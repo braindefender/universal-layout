@@ -1,0 +1,28 @@
+Windows keyboard layout, reverse engineered with fasm
+=====================================================
+
+I have reverse engineered the Windows keyboard layout format, found in files
+C:\Windows\System32\kbd*.dll. 
+
+Initially I wanted to add easy typing of symbols like —, á, ∞ but then decided
+to get as much usability as I can from the layouts. 
+
+The result? Layout that can switch between English and Russian keyboard with
+Caps Lock, globally across all applications, showing current language with
+Caps Lock LED, and with ability to type a whole bunch of additional symbols. 
+
+As well as keyboard layout format described in flat assembler source. 
+And for extra fun, a disassembler that turns a layout dll into source file. 
+
+With this, you can freely customize and improve your Windows keyboard layouts! 
+
+Published as public domain on https://github.com/grompe/kbdasm 
+
+The keyboard layout source found in kbdusru_undead.asm has all structures of
+the layout format mapped, makes use of UTF-8, and is hopefully more-or-less
+understandable for customizing. Even if you're not bilingual you can benefit
+from being able to type Unicode symbols easily. 
+
+The disassembler found in diskbd.bat is full of tricks to make fasm read a
+binary format and produce a text file. I had to write several macros to make
+it work.

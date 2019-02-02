@@ -1,0 +1,7 @@
+REGEDIT4
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]
+"AlwaysUnloadDll"=dword:00000001
+
+; For testing the keyboard layout, you may want to force the
+; unused DLL to unload immediately, this REG file does just that.
