@@ -23,7 +23,7 @@
 > — Nikita Prokopov (@tonsky)
 
 Действительно, очень сильно этот хаос демонстрирует следующая картинка:
-![](images/chaos.png)
+![](./images/chaos.png)
 
 Подробнее тут: [Правильная русская клавиатура](https://tonsky.livejournal.com/318571.html) и [Артемий Лебедев. Трагедия запятой](https://www.artlebedev.ru/kovodstvo/sections/105/)
 
