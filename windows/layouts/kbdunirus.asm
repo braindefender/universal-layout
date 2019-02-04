@@ -1,4 +1,7 @@
 ﻿="utf8"
+; kbdasm by Grom PE. Public domain.
+; kbdunieng — Universal Russian Layout
+
 include "detect_%arch%.inc"
 
 if SYSTEM_64BIT
@@ -12,6 +15,13 @@ MAKE_DLL equ 1
 include "base.inc"
 
 WOW64 = 0 ; Use when assembling for 32-bit subsystem for 64-bit OS (Is this ever needed?)
+USE_LIGATURES = 0 ; There is a bug in Firefox, if ligatures contain more than
+                  ; 4 characters, it won't start up if that layout is default;
+                  ; if the layout is switched to, Firefox then hangs.
+                  ; See also:
+                  ; http://www.unicode.org/mail-arch/unicode-ml/y2015-m08/0012.html
+DEBUG = 0
+
 NONE = WCH_NONE
 DEAD = WCH_DEAD
 LGTR = WCH_LGTR
@@ -101,13 +111,28 @@ keynamesExt:
 
 palign
 
+keynamesDead:
+    dp "´ACUTE"
+    dp "˝DOUBLE ACUTE"
+    dp "`GRAVE"
+    dp "^CIRCUMFLEX"
+    dp '¨UMLAUT'
+    dp "~TILDE"
+    dp "ˇCARON"
+    dp "°RING"
+    dp "¸CEDILLA"
+    dp "¯MACRON"
+    dp 0
+
+palign
+
 KbdTables:
     dp modifiers
     dp vk2wchar
-    dp 0                ; Dead keys
+    dp deadkeys         ; Dead keys
     dp keynames         ; Names of keys
     dp keynamesExt
-    dp 0                ; Names of dead keys
+    dp keynamesDead     ; Names of dead keys
     dp scancode2vk      ; Scan codes to virtual keys
     db scancode2vk.size / 2
     palign
@@ -158,36 +183,36 @@ vk2wchar1_3:
 palign
 
 vk2wchar2_4:
-    vkrow4 VK_GRAVE     , CAPLOK                        , "'" , '"' ,  "`",  "•"
+    vkrow4 VK_GRAVE     , 0                             , "'" , '"' ,  "`",  "•"
     vkrow4 "1"          , 0                             , "!" , "1" ,  "¹",  "¡"
     vkrow4 "2"          , 0                             , '@' , '2' ,  "²",  "½"
-    vkrow4 "3"          , 0                             , "#" , "3" ,  "³",  "⅓"
+    vkrow4 "3"          , 0                             , "#" , "3" ,  "№",  "⅓"
     vkrow4 "4"          , 0                             , "$" , "4" , NONE, NONE
     vkrow4 "5"          , 0                             , "%" , "5" ,  "‰", NONE
     vkrow4 "6"          , 0                             , "^" , "6" ,  "ˇ", NONE
     vkrow4 "7"          , 0                             , "?" , "7" ,  "¿", NONE
-    vkrow4 "8"          , 0                             , "*" , "8" ,  "∞", NONE
+    vkrow4 "8"          , 0                             , "*" , "8" ,  "∞",  "„"
     vkrow4 "9"          , 0                             , "(" , "9" ,  "‘",  "“"
     vkrow4 "0"          , 0                             , ")" , "0" ,  "’",  "”"
     vkrow4 VK_MINUS     , 0                             , "-" , "_" ,  "–",  "—"
     vkrow4 VK_EQUALS    , 0                             , "=" , "+" ,  "≠",  "±"
-    vkrow4 "Q"          , CAPLOK                        , "й" , "Й" , NONE, NONE
+    vkrow4 "Q"          , CAPLOK                        , "й" , "Й" , DEAD, DEAD
     vkrow4 "W"          , CAPLOK                        , "ц" , "Ц" , NONE, NONE
     vkrow4 "E"          , CAPLOK                        , "у" , "У" ,  "€", NONE
     vkrow4 "R"          , CAPLOK                        , "к" , "К" ,  "®", NONE
     vkrow4 "T"          , CAPLOK                        , "е" , "Е" ,  "ё",  "Ё"
     vkrow4 "Y"          , CAPLOK                        , "н" , "Н" ,  "¥", NONE
-    vkrow4 "U"          , CAPLOK                        , "г" , "Г" ,  "ν", NONE
+    vkrow4 "U"          , CAPLOK                        , "г" , "Г" ,  "ѵ",  "Ѵ"
     vkrow4 "I"          , CAPLOK                        , "ш" , "Ш" , NONE, NONE
-    vkrow4 "O"          , CAPLOK                        , "щ" , "Щ" ,  "∅",  "θ"
-    vkrow4 "P"          , CAPLOK                        , "з" , "З" , NONE, NONE
+    vkrow4 "O"          , CAPLOK                        , "щ" , "Щ" ,  "ѳ",  "θ"
+    vkrow4 "P"          , CAPLOK                        , "з" , "З" ,  "π", NONE
     vkrow4 VK_LBRACKET  , CAPLOK                        , "х" , "Х" ,  "[",  "{"
     vkrow4 VK_RBRACKET  , CAPLOK                        , "б" , "Б" ,  "]",  "}"
-    vkrow4 "A"          , CAPLOK                        , "ф" , "Ф" ,  "α", NONE
-    vkrow4 "S"          , CAPLOK                        , "ы" , "Ы" , NONE, NONE
-    vkrow4 "D"          , CAPLOK                        , "в" , "В" , NONE, NONE
+    vkrow4 "A"          , CAPLOK                        , "ф" , "Ф" ,  "α", "⌘"
+    vkrow4 "S"          , CAPLOK                        , "ы" , "Ы" ,  "§", NONE
+    vkrow4 "D"          , CAPLOK                        , "в" , "В" ,  "°",  "⌀"
     vkrow4 "F"          , CAPLOK                        , "а" , "А" ,  "£", NONE
-    vkrow4 "G"          , CAPLOK                        , "п" , "П" , NONE, NONE
+    vkrow4 "G"          , CAPLOK                        , "п" , "П" , NONE,  ""
     vkrow4 "H"          , CAPLOK                        , "р" , "Р" ,  "₽", NONE
     vkrow4 "J"          , CAPLOK                        , "о" , "О" , NONE, NONE
     vkrow4 "K"          , CAPLOK                        , "л" , "Л" , NONE, NONE
@@ -196,12 +221,12 @@ vk2wchar2_4:
     vkrow4 VK_APOSTROPHE, CAPLOK                        , "э" , "Э" ,  "»",  "→"
     vkrow4 VK_BACKSLASH , 0                             , "/" , "|" ,  "\", NONE
     vkrow4 VK_OEM_102   , 0                             , "/" , "|" ,  "\", NONE
-    vkrow4 "Z"          , CAPLOK                        , "я" , "Я" , NONE, NONE
-    vkrow4 "X"          , CAPLOK                        , "ч" , "Ч" ,  "×", NONE
-    vkrow4 "C"          , CAPLOK                        , "с" , "С" ,  "¢", NONE
+    vkrow4 "Z"          , CAPLOK                        , "я" , "Я" ,  "Ω", NONE
+    vkrow4 "X"          , CAPLOK                        , "ч" , "Ч" ,  "×",  "·"
+    vkrow4 "C"          , CAPLOK                        , "с" , "С" ,  "©",  "¢"
     vkrow4 "V"          , CAPLOK                        , "м" , "М" ,  "√", NONE
-    vkrow4 "B"          , CAPLOK                        , "и" , "И" ,  "β", NONE
-    vkrow4 "N"          , CAPLOK                        , "т" , "Т" , NONE, NONE
+    vkrow4 "B"          , CAPLOK                        , "и" , "И" ,  "β", "ẞ"
+    vkrow4 "N"          , CAPLOK                        , "т" , "Т" ,  "∀", NONE
     vkrow4 "M"          , CAPLOK                        , "ь" , "Ь" ,  "ъ",  "Ъ"
     vkrow4 VK_COMMA     , CAPLOK                        , "," , ";" ,  "<",  "≤"
     vkrow4 VK_PERIOD    , CAPLOK                        , "." , ":" ,  ">",  "≥"
@@ -427,6 +452,231 @@ scancode2vk: .:
 
 palign
 
+deadkeys:
+    du "'AÁ", 0, "'aá", 0
+    du "'ÆǼ", 0, "'æǽ", 0
+    du "'CĆ", 0, "'cć", 0
+    du "'EÉ", 0, "'eé", 0
+    du "'GǴ", 0, "'gǵ", 0
+    du "'IÍ", 0, "'ií", 0
+    du "'KḰ", 0, "'kḱ", 0
+    du "'LĹ", 0, "'lĺ", 0
+    du "'MḾ", 0, "'mḿ", 0
+    du "'NŃ", 0, "'nń", 0
+    du "'OÓ", 0, "'oó", 0
+    du "'ØǾ", 0, "'øǿ", 0
+    du "'PṔ", 0, "'pṕ", 0
+    du "'RŔ", 0, "'rŕ", 0
+    du "'SŚ", 0, "'sś", 0
+    du "'UÚ", 0, "'uú", 0
+    du "'WẂ", 0, "'wẃ", 0
+    du "'YÝ", 0, "'yý", 0
+    du "'ZŹ", 0, "'zź", 0
+    du '"OŐ', 0, '"oő', 0
+    du '"UŰ', 0, '"uű', 0
+    du "oAÅ", 0, "oaå", 0
+    du "oUŮ", 0, "ouů", 0
+    du ".AȦ", 0, ".aȧ", 0
+    du ".BḂ", 0, ".bḃ", 0
+    du ".CĊ", 0, ".cċ", 0
+    du ".DḊ", 0, ".dḋ", 0
+    du ".EĖ", 0, ".eė", 0
+    du ".FḞ", 0, ".fḟ", 0
+    du ".GĠ", 0, ".gġ", 0
+    du ".HḢ", 0, ".hḣ", 0
+    du ".Iİ", 0, ".iı", 0
+    du ".MṀ", 0, ".mṁ", 0
+    du ".NṄ", 0, ".nṅ", 0
+    du ".OȮ", 0, ".oȯ", 0
+    du ".PṖ", 0, ".pṗ", 0
+    du ".RṘ", 0, ".rṙ", 0
+    du ".SṠ", 0, ".sṡ", 0
+    du ".TṪ", 0, ".tṫ", 0
+    du ".WẆ", 0, ".wẇ", 0
+    du ".XẊ", 0, ".xẋ", 0
+    du ".YẎ", 0, ".yẏ", 0
+    du ".ZŻ", 0, ".zż", 0
+    du ':AÄ', 0, ':aä', 0
+    du ':EË', 0, ':eë', 0
+    du ':HḦ', 0, ':hḧ', 0
+    du ':IÏ', 0, ':iï', 0
+    du ':OÖ', 0, ':oö', 0
+    du ':UÜ', 0, ':uü', 0
+    du ':WẄ', 0, ':wẅ', 0
+    du ':XẌ', 0, ':xẍ', 0
+    du ':YŸ', 0, ':yÿ', 0
+    du "^AÂ", 0, "^aâ", 0
+    du "^CĈ", 0, "^cĉ", 0
+    du "^EÊ", 0, "^eê", 0
+    du "^GĜ", 0, "^gĝ", 0
+    du "^HĤ", 0, "^hĥ", 0
+    du "^IÎ", 0, "^iî", 0
+    du "^JĴ", 0, "^jĵ", 0
+    du "^OÔ", 0, "^oô", 0
+    du "^SŜ", 0, "^sŝ", 0
+    du "^UÛ", 0, "^uû", 0
+    du "^WŴ", 0, "^wŵ", 0
+    du "^YŶ", 0, "^yŷ", 0
+    du "^ZẐ", 0, "^zẑ", 0
+    du "vAǍ", 0, "vaǎ", 0
+    du "vCČ", 0, "vcč", 0
+    du "vDĎ", 0, "vdď", 0
+    du "vEĚ", 0, "veě", 0
+    du "vGǦ", 0, "vgǧ", 0
+    du "vHȞ", 0, "vhȟ", 0
+    du "vIǏ", 0, "viǐ", 0
+    du "vKǨ", 0, "vkǩ", 0
+    du "vLĽ", 0, "vlľ", 0
+    du "vNŇ", 0, "vnň", 0
+    du "vOǑ", 0, "voǒ", 0
+    du "vRŘ", 0, "vrř", 0
+    du "vSŠ", 0, "vsš", 0
+    du "vTŤ", 0, "vtť", 0
+    du "vUǓ", 0, "vuǔ", 0
+    du "vZŽ", 0, "vzž", 0
+    du "uAĂ", 0, "uaă", 0
+    du "uEĔ", 0, "ueĕ", 0
+    du "uGĞ", 0, "ugğ", 0
+    du "uIĬ", 0, "uiĭ", 0
+    du "uOŎ", 0, "uoŏ", 0
+    du "uUŬ", 0, "uuŭ", 0
+    du "`AÀ", 0, "`aà", 0
+    du "`EÈ", 0, "`eè", 0
+    du "`IÌ", 0, "`iì", 0
+    du "`NǸ", 0, "`nǹ", 0
+    du "`OÒ", 0, "`oò", 0
+    du "`UÙ", 0, "`uù", 0
+    du "`WẀ", 0, "`wẁ", 0
+    du "`YỲ", 0, "`yỳ", 0
+    du "~AÃ", 0, "~aã", 0
+    du "~EẼ", 0, "~eẽ", 0
+    du "~IĨ", 0, "~iĩ", 0
+    du "~NÑ", 0, "~nñ", 0
+    du "~OÕ", 0, "~oõ", 0
+    du "~UŨ", 0, "~uũ", 0
+    du "~VṼ", 0, "~vṽ", 0
+    du "~YỸ", 0, "~yỹ", 0
+; ogonek:  ˛ Ąą    Ęę    Įį      Ǫǫ      Ųų
+; cedilla: ¸   ÇçḐḑ  ĢģḨḩ  ĶķĻļŅņ  ŖŗŞşŢţ
+    du ",AĄ", 0, ",aą", 0
+    du ",CÇ", 0, ",cç", 0
+    du ",DḐ", 0, ",dḑ", 0
+    du ",EĘ", 0, ",eę", 0
+    du ",GĢ", 0, ",gģ", 0
+    du ",HḨ", 0, ",hḩ", 0
+    du ",IĮ", 0, ",iį", 0
+    du ",KĶ", 0, ",kķ", 0
+    du ",LĻ", 0, ",lļ", 0
+    du ",NŅ", 0, ",nņ", 0
+    du ",OǪ", 0, ",oǫ", 0
+    du ",RŖ", 0, ",rŗ", 0
+    du ",SŞ", 0, ",sş", 0
+    du ",TŢ", 0, ",tţ", 0
+    du ",UŲ", 0, ",uų", 0
+    du "/AȺ", 0, "/aⱥ", 0
+    du "/BɃ", 0, "/bƀ", 0
+    du "/CȻ", 0, "/cȼ", 0
+    du "/DĐ", 0, "/dđ", 0
+    du "/EɆ", 0, "/eɇ", 0
+    du "/FꞘ", 0, "/fꞙ", 0
+    du "/GǤ", 0, "/gǥ", 0
+    du "/HĦ", 0, "/hħ", 0
+    du "/IƗ", 0, "/iɨ", 0
+    du "/JɈ", 0, "/jɉ", 0
+    du "/KꝀ", 0, "/kꝁ", 0
+    du "/LŁ", 0, "/lł", 0
+    du "/OØ", 1, "/oø", 1, " ØØ", 0, " øø", 0
+    du "/PⱣ", 0, "/pᵽ", 0
+    du "/RɌ", 0, "/rɍ", 0
+    du "/TŦ", 0, "/tŧ", 0
+    du "/YɎ", 0, "/yɏ", 0
+    du "/ZƵ", 0, "/zƶ", 0
+    du "mAĀ", 0, "maā", 0
+    du "mÆǢ", 0, "mæǣ", 0
+    du "mEĒ", 0, "meē", 0
+    du "mGḠ", 0, "mgḡ", 0
+    du "mIĪ", 0, "miī", 0
+    du "mYȲ", 0, "myȳ", 0
+    du "eAÆ", 1, "eaæ", 1, "EAÆ", 1, " ÆÆ", 0, " ææ", 0
+    du "eOŒ", 0, "eoœ", 0, "EOŒ", 0
+    du "oc©", 0
+    du "or®", 0
+    du "mt™", 0
+    du "hTÞ", 0, "htþ", 0, "HTÞ", 0
+    du "sSẞ", 0, "ssß", 0, "SSẞ", 0
+    du "tEÐ", 0, "teð", 0, "TEÐ", 0
+    du "umµ", 0
+    du "mOΩ", 0, "moω", 0, "MOΩ", 0
+    du "op£", 0
+    du "ec¢", 0
+    du "ey¥", 0
+    du "ee€", 0
+    du "ur₽", 0
+    du "ifﬁ", 0
+    du "ffﬀ", 0
+    du "lfﬂ", 0
+    du "ni∫", 0
+    du "ufƒ", 0
+    du "oo•", 0
+    du "es§", 0
+	du "ap¶", 0
+    du "ipπ", 0
+	du "qs√", 0
+    du "hs", 0ADh, 0 ; soft hyphen
+    du "lr", 202Eh, 0 ; right-to-left override
+    du "rl", 202Dh, 0 ; left-to-right override
+    du "sh☭", 0
+	du "ks☠", 0
+	du "ar☢", 0
+	du "ib☣", 0
+	du "ep☮", 0
+	du "iy☯", 0
+	du "ns❄", 0
+    du "aw⚠", 0
+    du "eh♥", 0
+	du "ts★", 0
+    du "mm¯", 0
+    du "0oಠ", 0
+
+    du "`q̀", 0 ; combining grave
+    du "'q́", 0 ; combining acute
+    du "эq́", 0 ; combining acute (RU layout)
+    du "^q̂", 0 ; combining circumflex
+    du "~q̃", 0 ; combining tilde
+    du "mq̄", 0 ; combining macron
+    du "uq̆", 0 ; combining breve
+    du ".q̇", 0 ; combining dot above
+    du ":q̈", 0 ; combining diaeresis
+    du "oq̊", 0 ; combining ring
+    du '"q̋', 0 ; combining double acute
+    du "vq̌", 0 ; combining caron
+    du ",q̧", 0 ; combining cedilla
+    du "-q̶", 0 ; combining long stroke overlay
+    du "/q̸", 0 ; combining solidus
+
+    du "2f½", 0
+    du "3f⅓", 0
+    du "4f¼", 0
+    du "5f⅕", 0
+    du "6f⅙", 0
+    du "7f⅐", 0
+    du "8f⅛", 0
+    du "9f⅑", 0
+    du "0f⅒", 0
+
+    du "fb█", 0, "Fb▓", 0, "FB▓", 0
+    du "gb░", 0, "Gb▒", 0, "GB▒", 0
+    du "hb▀", 0, "Hb▌", 0, "HB▌", 0
+    du "jb▄", 0, "Jb▐", 0, "JB▐", 0
+    du "vb↓", 0
+	du "*b✱", 0
+
+    du "bb", 20BFh, 0 ; Bitcoin sign
+
+    dw 4 dup 0
+
+palign
+
 data export
 export "kbdunirus.dll", KbdLayerDescriptor, "KbdLayerDescriptor"
 end data
@@ -455,9 +705,9 @@ versioninfo version,VOS_NT_WINDOWS32,VFT_DLL,VFT2_DRV_KEYBOARD,0,1200,\
     "FileDescription","Universal Layout Russian",\
     "FileVersion","1.0",\
     "InternalName","kbdunirus",\
-    "LegalCopyright","Public domain. No rights reserved.",\
+    "LegalCopyright","License MIT",\
     "OriginalFilename","kbdunirus.dll",\
-    "ProductName","Microsoft® Windows® Operating System",\
+    "ProductName","universal_layout",\
     "ProductVersion","1.0"
 
 section ".reloc" data readable discardable fixups

@@ -212,7 +212,7 @@ vk2wchar1_3:
 palign
 
 vk2wchar2_4:
-    vkrow4 VK_GRAVE     , CAPLOK                        , "'" , '"' ,  "`",  "•"
+    vkrow4 VK_GRAVE     , 0                             , "'" , '"' ,  "`",  "•"
     vkrow4 "1"          , 0                             , "!" , "1" ,  "¹",  "¡"
     vkrow4 "2"          , 0                             , '@' , '2' ,  "²",  "½"
     vkrow4 "3"          , 0                             , "#" , "3" ,  "³",  "⅓"
@@ -220,7 +220,7 @@ vk2wchar2_4:
     vkrow4 "5"          , 0                             , "%" , "5" ,  "‰", NONE
     vkrow4 "6"          , 0                             , "^" , "6" ,  "ˇ", NONE
     vkrow4 "7"          , 0                             , "?" , "7" ,  "¿", NONE
-    vkrow4 "8"          , 0                             , "*" , "8" ,  "∞", NONE
+    vkrow4 "8"          , 0                             , "*" , "8" ,  "∞",  "„"
     vkrow4 "9"          , 0                             , "(" , "9" ,  "‘",  "“"
     vkrow4 "0"          , 0                             , ")" , "0" ,  "’",  "”"
     vkrow4 VK_MINUS     , 0                             , "-" , "_" ,  "–",  "—"
@@ -229,19 +229,19 @@ vk2wchar2_4:
     vkrow4 "W"          , CAPLOK                        , "w" , "W" , NONE, NONE
     vkrow4 "E"          , CAPLOK                        , "e" , "E" ,  "€", NONE
     vkrow4 "R"          , CAPLOK                        , "r" , "R" ,  "®", NONE
-    vkrow4 "T"          , CAPLOK                        , "t" , "T" , NONE, NONE
+    vkrow4 "T"          , CAPLOK                        , "t" , "T" ,  "™", NONE
     vkrow4 "Y"          , CAPLOK                        , "y" , "Y" ,  "¥", NONE
-    vkrow4 "U"          , CAPLOK                        , "u" , "U" ,  "ν", NONE
+    vkrow4 "U"          , CAPLOK                        , "u" , "U" ,  "ѵ",  "Ѵ"
     vkrow4 "I"          , CAPLOK                        , "i" , "I" , NONE, NONE
-    vkrow4 "O"          , CAPLOK                        , "o" , "O" ,  "∅",  "θ"
-    vkrow4 "P"          , CAPLOK                        , "p" , "P" , NONE, NONE
+    vkrow4 "O"          , CAPLOK                        , "o" , "O" ,  "ѳ",  "θ"
+    vkrow4 "P"          , CAPLOK                        , "p" , "P" ,  "π", NONE
     vkrow4 VK_LBRACKET  , CAPLOK                        , "[" , "{" ,  "[",  "{"
     vkrow4 VK_RBRACKET  , CAPLOK                        , "]" , "}" ,  "]",  "}"
-    vkrow4 "A"          , CAPLOK                        , "a" , "A" ,  "α", NONE
-    vkrow4 "S"          , CAPLOK                        , "s" , "S" , NONE, NONE
-    vkrow4 "D"          , CAPLOK                        , "d" , "D" , NONE, NONE
+    vkrow4 "A"          , CAPLOK                        , "a" , "A" ,  "α", "⌘"
+    vkrow4 "S"          , CAPLOK                        , "s" , "S" ,  "§", NONE
+    vkrow4 "D"          , CAPLOK                        , "d" , "D" ,  "°",  "⌀"
     vkrow4 "F"          , CAPLOK                        , "f" , "F" ,  "£", NONE
-    vkrow4 "G"          , CAPLOK                        , "g" , "G" , NONE, NONE
+    vkrow4 "G"          , CAPLOK                        , "g" , "G" , NONE,  ""
     vkrow4 "H"          , CAPLOK                        , "h" , "H" ,  "₽", NONE
     vkrow4 "J"          , CAPLOK                        , "j" , "J" , NONE, NONE
     vkrow4 "K"          , CAPLOK                        , "k" , "K" , NONE, NONE
@@ -250,16 +250,16 @@ vk2wchar2_4:
     vkrow4 VK_APOSTROPHE, 0                             , "~" , "≈" ,  "»",  "→"
     vkrow4 VK_BACKSLASH , 0                             , "/" , "|" ,  "\", NONE
     vkrow4 VK_OEM_102   , 0                             , "/" , "|" ,  "\", NONE
-    vkrow4 "Z"          , CAPLOK                        , "z" , "Z" , NONE, NONE
-    vkrow4 "X"          , CAPLOK                        , "x" , "X" ,  "×", NONE
-    vkrow4 "C"          , CAPLOK                        , "c" , "C" ,  "¢", NONE
+    vkrow4 "Z"          , CAPLOK                        , "z" , "Z" ,  "Ω", NONE
+    vkrow4 "X"          , CAPLOK                        , "x" , "X" ,  "×",  "·"
+    vkrow4 "C"          , CAPLOK                        , "c" , "C" ,  "©",  "¢"
     vkrow4 "V"          , CAPLOK                        , "v" , "V" ,  "√", NONE
-    vkrow4 "B"          , CAPLOK                        , "b" , "B" ,  "β", NONE
-    vkrow4 "N"          , CAPLOK                        , "n" , "N" , NONE, NONE
-    vkrow4 "M"          , CAPLOK                        , "m" , "M" , LGTR, LGTR
+    vkrow4 "B"          , CAPLOK                        , "b" , "B" ,  "β", "ẞ"
+    vkrow4 "N"          , CAPLOK                        , "n" , "N" ,  "∀", NONE
+    vkrow4 "M"          , CAPLOK                        , "m" , "M" ,  "−",  "•"
     vkrow4 VK_COMMA     , CAPLOK                        , "," , ";" ,  "<",  "≤"
     vkrow4 VK_PERIOD    , CAPLOK                        , "." , ":" ,  ">",  "≥"
-    vkrow4 VK_SLASH     , 0                             , "&" , "&" ,  "&", "＆"
+    vkrow4 VK_SLASH     , 0                             , "&" , "&" ,  "…", "＆"
     vkrow4 VK_SPACE     , 0                             , " " , " " ,  " ",  " "
     vkrow4 VK_DECIMAL   , 0                             , "." , "," , NONE, NONE
     dw 0, 0, 4 dup 0
