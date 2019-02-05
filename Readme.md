@@ -1,4 +1,4 @@
-![](./images/Layout.png)
+![](./images/Layout.jpg)
 
 # Universal Layout EN / RU
 
@@ -35,7 +35,7 @@
 - Все стандартные кавычки вынесены в одну кнопку.
 - Ъ, Ё, ₽, € вынесены на слой с модификатором **Alt**
 
-![](./images/Layout-Alternative.png)
+![](./images/Layout-Alternative.jpg)
 
 ## Как установить?
 
