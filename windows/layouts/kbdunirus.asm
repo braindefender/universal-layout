@@ -230,7 +230,7 @@ vk2wchar2_4:
     vkrow4 "M"          , CAPLOK                        , "ь" , "Ь" ,  "ъ",  "Ъ"
     vkrow4 VK_COMMA     , CAPLOK                        , "," , ";" ,  "<",  "≤"
     vkrow4 VK_PERIOD    , CAPLOK                        , "." , ":" ,  ">",  "≥"
-    vkrow4 VK_SLASH     , 0                             , "ю" , "Ю" ,  "&", "＆"
+    vkrow4 VK_SLASH     , CAPLOK                        , "ю" , "Ю" ,  "&", "＆"
     vkrow4 VK_SPACE     , 0                             , " " , " " ,  " ",  " "
     vkrow4 VK_DECIMAL   , 0                             , "." , "," , NONE, NONE
     dw 0, 0, 4 dup 0
@@ -238,26 +238,26 @@ vk2wchar2_4:
 palign
 
 vk2wchar4_2:
-    vkrow2 VK_TAB       , 0                             , 0x09, 0x09
-    vkrow2 VK_ADD       , 0                             , "+" , "+"
-    vkrow2 VK_DIVIDE    , 0                             , "/" , "/"
-    vkrow2 VK_MULTIPLY  , 0                             , "*" , "*"
-    vkrow2 VK_SUBTRACT  , 0                             , "-" , "-"
+    vkrow2 VK_TAB,      0, 0x09, 0x09
+    vkrow2 VK_ADD,      0, "+" , "+"
+    vkrow2 VK_DIVIDE  , 0, "/" , "/"
+    vkrow2 VK_MULTIPLY, 0, "*" , "*"
+    vkrow2 VK_SUBTRACT, 0, "-" , "-"
     dw 0, 0, 2 dup 0
 
 palign
 
 vk2wchar5_1:
-    vkrow1 VK_NUMPAD0   , 0                             , "0"
-    vkrow1 VK_NUMPAD1   , 0                             , "1"
-    vkrow1 VK_NUMPAD2   , 0                             , "2"
-    vkrow1 VK_NUMPAD3   , 0                             , "3"
-    vkrow1 VK_NUMPAD4   , 0                             , "4"
-    vkrow1 VK_NUMPAD5   , 0                             , "5"
-    vkrow1 VK_NUMPAD6   , 0                             , "6"
-    vkrow1 VK_NUMPAD7   , 0                             , "7"
-    vkrow1 VK_NUMPAD8   , 0                             , "8"
-    vkrow1 VK_NUMPAD9   , 0                             , "9"
+    vkrow1 VK_NUMPAD0, 0, "0"
+    vkrow1 VK_NUMPAD1, 0, "1"
+    vkrow1 VK_NUMPAD2, 0, "2"
+    vkrow1 VK_NUMPAD3, 0, "3"
+    vkrow1 VK_NUMPAD4, 0, "4"
+    vkrow1 VK_NUMPAD5, 0, "5"
+    vkrow1 VK_NUMPAD6, 0, "6"
+    vkrow1 VK_NUMPAD7, 0, "7"
+    vkrow1 VK_NUMPAD8, 0, "8"
+    vkrow1 VK_NUMPAD9, 0, "9"
     dw 0, 0, 1 dup 0
 
 palign

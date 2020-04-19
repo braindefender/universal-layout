@@ -188,16 +188,16 @@ modifiers_max = $ - .start - 1
 palign
 
 vk2wchar1_1:
-    vkrow1 VK_NUMPAD0   , 0                             , "0"
-    vkrow1 VK_NUMPAD1   , 0                             , "1"
-    vkrow1 VK_NUMPAD2   , 0                             , "2"
-    vkrow1 VK_NUMPAD3   , 0                             , "3"
-    vkrow1 VK_NUMPAD4   , 0                             , "4"
-    vkrow1 VK_NUMPAD5   , 0                             , "5"
-    vkrow1 VK_NUMPAD6   , 0                             , "6"
-    vkrow1 VK_NUMPAD7   , 0                             , "7"
-    vkrow1 VK_NUMPAD8   , 0                             , "8"
-    vkrow1 VK_NUMPAD9   , 0                             , "9"
+    vkrow1 VK_NUMPAD0, 0, "0"
+    vkrow1 VK_NUMPAD1, 0, "1"
+    vkrow1 VK_NUMPAD2, 0, "2"
+    vkrow1 VK_NUMPAD3, 0, "3"
+    vkrow1 VK_NUMPAD4, 0, "4"
+    vkrow1 VK_NUMPAD5, 0, "5"
+    vkrow1 VK_NUMPAD6, 0, "6"
+    vkrow1 VK_NUMPAD7, 0, "7"
+    vkrow1 VK_NUMPAD8, 0, "8"
+    vkrow1 VK_NUMPAD9, 0, "9"
     dw 0, 0, 1 dup 0
 
 palign

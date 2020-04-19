@@ -1,4 +1,4 @@
-![](./images/Layout.jpg)
+![](./images/Default.jpg)
 
 # Universal Layout EN / RU
 
@@ -35,7 +35,7 @@
 - Все стандартные кавычки вынесены в одну кнопку.
 - Ъ, Ё, ₽, € вынесены на слой с модификатором **Alt**
 
-![](./images/Layout-Alternative.jpg)
+![](./images/Alternative.jpg)
 
 ## Как установить?
 
@@ -43,7 +43,7 @@
 
 ### Windows 10
 
-1. Файлы `layouts/kbdunieng.dll` и `layouts/kbdunirus.dll` скопировать в папку `C:/Windows/System32`, либо запустить файл `install_universal_layout.bat`.
+1. Файлы `layouts/kbdunieng.dll` и `layouts/kbdunirus.dll` скопировать в папку `C:/Windows/System32` и установить файлы реестра `install_uni_eng.reg` и `install_uni_rus.reg`.
 2. Проверить и выбрать раскладки в `Параметры > Время и язык > Регион и язык` для каждого языка ввода.
 3. _(Опционально)_ Удалить стандартные раскладки в этих же меню и применить `Remove Autoload Default Layouts.reg` для того, чтобы они не появлялись вновь при загрузке системы. _(Работает не у всех)_
 

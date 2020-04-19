@@ -19,7 +19,9 @@ F5::Media_Play_Pause
 F6::Volume_Mute
 F7::Volume_Down
 F8::Volume_Up
-F9::Rwin
+F9::
+  Process, Close , explorer.exe
+  return
 F10::#Tab
 F12::#a
 

@@ -1,1 +1,0 @@
-err "This is not a standalone fasm source; use it via .bat file"
