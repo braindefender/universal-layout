@@ -1,0 +1,55 @@
+hidden partial alphanumeric_keys
+xkb_symbols "ru_universal" {
+
+    include "ru(winkeys)"
+    name[Group1]= "Russian Universal";
+    include "level3(ralt_switch)"
+    key <TLDE> {	[     apostrophe,	quotedbl,grave	]	};
+
+	key <AE02> {	[	2,	at			]	}                                                         ;
+	key <AE03> {	[	3,	numbersign	]	}                                                   ;
+	key <AE04> {	[	4,	dollar		]	}                                                      ;
+	key <AE05> { 	[	5,     percent  ] }                                                ;
+	key <AE06> {	[	6,	asciicircum	]	}                                                  ;
+	key <AE07> {    [	7,    question  ] }                                              ;
+	key <AE11> { [       minus,  underscore,          endash,          emdash ] }      ;
+
+    key <AD05> { [       Cyrillic_ie,       Cyrillic_IE ,Cyrillic_io,       Cyrillic_IO ] };
+    key <AD11> { [       Cyrillic_ha,       Cyrillic_HA, bracketleft,	braceleft  ] };
+	key <AD12> { [       Cyrillic_be,       Cyrillic_BE, bracketright,	braceright	]  } ;
+
+    key <AC10> { [      Cyrillic_zhe,      Cyrillic_ZHE  ] };
+    key <AC11> { [        Cyrillic_e,        Cyrillic_E, asciitilde  ] };
+
+    key <AB07> { [ Cyrillic_softsign, Cyrillic_SOFTSIGN,Cyrillic_hardsign, Cyrillic_HARDSIGN  ] };
+ 	key <AB08> {	[     comma,	semicolon,	less, lessthanequal		]	};
+    key <AB09> {	[    period,	colon,		greater	,greaterthanequal	]	};
+    key <AB10> {	[       Cyrillic_yu,       Cyrillic_YU , ampersand] 	};
+
+	key <BKSL> {	[slash,         bar,   backslash]	};
+
+} ;
+
+xkb_symbols "us_universal" {
+
+	include "us"
+	name[Group1]= "English Universal"                                                  ;
+	    include "level3(ralt_switch)"
+    key <TLDE> {	[     apostrophe,	quotedbl,grave	]	};
+
+	key <AE07> {    [	7,    question  ] }                                              ;
+	key <AE11> { [       minus,  underscore,          endash,          emdash ] }      ;
+
+
+    key <AC10> { [        ] };
+    key <AC11> { [        asciitilde  ] };
+
+ 	key <AB08> {	[     comma,	semicolon,	less, 	lessthanequal		]	};
+    key <AB09> {	[    period,	colon,		greater	,greaterthanequal	]	};
+    key <AB10> {	[ ampersand, slash] 	};
+
+	key <BKSL> {	[slash,         bar,   backslash]	};
+};
+
+
+//setxkbmap -layout "uni_fork(us_universal),uni_fork(ru_universal)" -option "" -option "grp:win_space_toggle,grp_led:scroll" -print | xkbcomp -I"$HOME/.config/xkb" - "${DISPLAY%%.*}"
