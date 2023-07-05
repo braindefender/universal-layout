@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xkbConfigRegistry SYSTEM "xkb.dtd">
+<xkbConfigRegistry version="1.1">
+  <optionList>
+    <group allowMultipleSelection="true">
+      <configItem>
+        <name>Universal Layout</name>
+        <description>EN/RU Layout</description>
+      </configItem>
+      <option>
+        <configItem>
+          <name>universal:universal</name>
+          <description>Enable Layout</description>
+        </configItem>
+      </option>
+      <option>
+        <configItem>
+          <name>universal_ortho:universal_ortho</name>
+          <description>Enable Ortho Layout</description>
+        </configItem>
+      </option>
+    </group>
+  </optionList>
+</xkbConfigRegistry>

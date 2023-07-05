@@ -1,0 +1,5 @@
+! option = symbols
+universal:universal= +universal(universal)
+universal_ortho:universal_ortho= +universal_ortho(universal_ortho)
+
+! include %S/evdev
