@@ -94,21 +94,33 @@
 
 > Люблю линукс за то, что можно всё настраивать. Правда тебе **приходится** всё настраивать.
 
-1. Поместить содержимое папки `layouts/Linux/xkb` в `~/.config/xkb`.
-2. Далее, способ установки зависит от окружения рабочего стола (Desktop Environment):
-   - GNOME: в Gnome Tweaks в настройках клавиатуры включить опцию Universal Layout.
+1. Для NixOS: положить universal (или universal_ortho) рядом с конфигом (или указать путь в symbolsFile до него). Пример:
+
+   ```nix
+   {...}: {
+      services.xserver = {
+        layout = "universal";
+
+        extraLayouts = {
+          universal = {
+            description = "Universal Layout";
+            languages = ["eng"];
+            symbolsFile = ./universal;
+          };
+        };
+      };
+   }
+   ```
+
+2. Для остальных: поместить содержимое папки `layouts/Linux/xkb` в `~/.config/xkb`.
+3. Далее, способ установки зависит от окружения рабочего стола (Desktop Environment):
+
+   - GNOME: В списке языков добавить Russian и English. В Gnome Tweaks в настройках клавиатуры включить опцию Universal Layout. Но это может работать криво: на Wayland может появляться ещё одна группа с дефолтной английской раскладкой.
    - i3wm, herbstluftwm и другие WM на X Window System: добавить в автозапуск следующие команды:
      ```sh
      xkbcomp $HOME/.config/xkb/symbols/universal $DISPLAY 2>&1
-     xmodmap -e "keycode 108 = Alt_R Meta_R Alt_R Meta_R"
      ```
    - Для sway, hyprland и других WM на Wayland: ищите инструкцию в документации своего оконного менеджера.
-
-#### **Баги:**
-
-- У приложений, работающих на Wayland и Electron есть баг, когда правый Alt (AltGr) регистрируется только как горячая клавиша для некоторых клавиш. Чтобы это исправить, есть несколько вариантов:
-  - Изменить регистрацию модификатора Mod3 (RAlt) на уровне XKB.
-  - Использовать в прошивке клавиатуры клавишу Hiragana/Katakana, которая дублирует поведение AltGr.
 
 ### macOS
 
@@ -124,7 +136,6 @@
 ## Todo
 
 - Обновить версию для macOS
-- Добавить flake для NixOS
 
 ## Благодарности
 

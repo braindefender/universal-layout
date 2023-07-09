@@ -5,7 +5,7 @@
     <group allowMultipleSelection="true">
       <configItem>
         <name>Universal Layout</name>
-        <description>EN/RU Layout</description>
+        <description>Universal Layout EN/RU</description>
       </configItem>
       <option>
         <configItem>
