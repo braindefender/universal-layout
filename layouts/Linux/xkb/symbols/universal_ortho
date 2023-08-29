@@ -1,6 +1,6 @@
 default partial alphanumeric_keys modifier_keys
 xkb_symbols "universal" {
-    // allows RALT to trigger AltGr (trird and four) layer
+    // allows RALT to trigger AltGr (third and four) layer
     include "level3(ralt_switch)"
     modifier_map Mod5 { <LVL3> };
     modifier_map Mod5 { <RALT> };
