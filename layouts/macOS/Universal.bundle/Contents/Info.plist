@@ -5,20 +5,28 @@
 	<key>CFBundleIdentifier</key>
 	<string>me.tonsky.keyboardlayout.universal</string>
 	<key>CFBundleName</key>
-	<string>Universal</string>
+	<string>Universal Ortho</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
-	<key>KLInfo_English - Universal Dark</key>
+	<string>2.0</string>
+	<key>KLInfo_Universal Layout Ortho</key>
 	<dict>
+		<key>TICapsLockLanguageSwitchCapable</key>
+		<true/>
+		<key>TISIconIsTemplate</key>
+		<true/>
 		<key>TISInputSourceID</key>
-		<string>me.tonsky.keyboardlayout.universal.english-universaldark</string>
+		<string>me.tonsky.keyboardlayout.universal.universallayoutortho</string>
 		<key>TISIntendedLanguage</key>
-		<string>en</string>
+		<string>ru</string>
 	</dict>
-	<key>KLInfo_Russian - Universal Dark</key>
+	<key>KLInfo_Universal Layout Standard</key>
 	<dict>
+		<key>TICapsLockLanguageSwitchCapable</key>
+		<true/>
+		<key>TISIconIsTemplate</key>
+		<true/>
 		<key>TISInputSourceID</key>
-		<string>me.tonsky.keyboardlayout.universal.russian-universaldark</string>
+		<string>me.tonsky.keyboardlayout.universal.universallayoutstandard</string>
 		<key>TISIntendedLanguage</key>
 		<string>ru</string>
 	</dict>
