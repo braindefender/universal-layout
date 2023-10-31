@@ -139,7 +139,7 @@ xkb_symbols "universal" {
     };
     key <AD09> {
         type = "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1] = [ o,     O,    ],
+        symbols[Group1] = [ o,     O     ],
         symbols[Group2] = [ U0449, U0429 ]
     };
     key <AD10> {
