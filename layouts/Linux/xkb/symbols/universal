@@ -259,8 +259,8 @@ xkb_symbols "universal" {
     };
     key <AB08> {
         type = "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1] = [ comma, semicolon, greater, U2264 ],
-        symbols[Group2] = [ comma, semicolon, greater, U2264 ]
+        symbols[Group1] = [ comma, semicolon, less, U2264 ],
+        symbols[Group2] = [ comma, semicolon, less, U2264 ]
     };
     key <AB09> {
         type = "FOUR_LEVEL_ALPHABETIC",
