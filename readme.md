@@ -146,19 +146,19 @@
 
 > EXE'шник установщика есть и в репозитории в папке `layouts/Windows/software/msklc.exe`.
 
-Программа древняя и давно не обновлялась Microsoft, поэтому для его работы, потребуется [.NET Framework 2.0](https://www.microsoft.com/ru-ru/download/details.aspx?id=6041).
+Программа древняя и давно не обновлялась Microsoft, поэтому для его работы нужен [.NET Framework 2.0](https://www.microsoft.com/ru-ru/download/details.aspx?id=6041).
 
 ![msklc](./images/software/msklc.png)
 
 С помощью неё можно открыть и редактировать файлы формата `.klc`, а также создать пакет для установки раскладки (`Project > Build DLL and Setup Package`).
 
-> Важно! Поле `Name` в `Project > Properties` должно быть уникальным для системы и содержать не более 8 символов!
+> Важно! Поле `Name` в `Project > Properties` должно быть уникальным для системы и содержать не более 8 символов!
 
 ### Linux
 
-Для изменения или создания раскладок под Linux я не находил GUI-приложений. Файлы раскладок никак не компилируются, поэтому для их редактирования вам понадобится [любой](https://www.vim.org) [текстовый](https://www.gnu.org/software/emacs/) [редактор](https://helix-editor.com).
+Для изменения или создания раскладок под Linux я не находил GUI-приложений. Файлы раскладок никак не компилируются, поэтому для их редактирования вам понадобится [любой](https://www.vim.org) [текстовый](https://www.gnu.org/software/emacs/) [редактор](https://helix-editor.com).
 
-О том как пользоваться XKB можно почитать на [ArchWiki](https://wiki.archlinux.org/title/X_keyboard_extension).
+О том как пользоваться XKB можно почитать на [ArchWiki](https://wiki.archlinux.org/title/X_keyboard_extension).
 
 ### macOS
 
@@ -166,7 +166,7 @@
 
 ![ukelele](./images/software/ukelele.png)
 
-С помощью неё можно открыть файлы формата `.bundle`, установить раскладку напрямую в систему или экспортировать в файл.
+С помощью неё можно открыть файлы формата `.bundle`, установить раскладку напрямую в систему или экспортировать в файл.
 
 ## Благодарности
 
