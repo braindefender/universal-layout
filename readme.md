@@ -74,7 +74,7 @@
 <kbd>Ъ</kbd> = <kbd>Alt</kbd> + <kbd>Ь</kbd> <br>
 <kbd>Щ</kbd> = <kbd>Alt</kbd> + <kbd>Ш</kbd> <br>
 
-Также, эта раскладка используется в [36-клавишной раскладке Wellum](https://github.com/braindefender/wellum/blob/master/README_RU.md)
+Также, эта раскладка используется в [36-клавишной раскладке Wellum](https://github.com/braindefender/wellum)
 
 ## О минусах и багах
 
