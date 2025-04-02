@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xkbConfigRegistry SYSTEM "xkb.dtd">
+<xkbConfigRegistry version="1.1">
+  <layoutList>
+    <!-- SEPARATE ENGLISH -->
+    <layout>
+      <configItem>
+        <name>univEn</name>
+        <!-- Keyboard indicator for Universal layouts -->
+        <shortDescription>univ en</shortDescription>
+        <description>Universal EN</description>
+        <countryList>
+          <iso3166Id>RU</iso3166Id>
+        </countryList>
+        <languageList>
+          <iso639Id>rus</iso639Id>
+        </languageList>
+      </configItem>
+    </layout>
+
+    <!-- SEPARATE RUSSIAN -->
+    <layout>
+      <configItem>
+        <name>univRu</name>
+        <!-- Keyboard indicator for Universal layouts -->
+        <shortDescription>univ ru</shortDescription>
+        <description>Universal RU</description>
+        <countryList>
+          <iso3166Id>RU</iso3166Id>
+        </countryList>
+        <languageList>
+          <iso639Id>rus</iso639Id>
+        </languageList>
+      </configItem>
+    </layout>
+  </layoutList>
+
+  <optionList>
+    <group allowMultipleSelection="true">
+      <configItem>
+        <name>Universal Layout</name>
+        <description>_My Universal Layout</description>
+      </configItem>
+      <option>
+        <configItem>
+          <name>univEn:univEn</name>
+          <description>Enable En Layout</description>
+        </configItem>
+      </option>
+      <option>
+        <configItem>
+          <name>univRu:univRu</name>
+          <description>Enable Ru Layout</description>
+        </configItem>
+      </option>
+    </group>
+  </optionList>
+</xkbConfigRegistry>

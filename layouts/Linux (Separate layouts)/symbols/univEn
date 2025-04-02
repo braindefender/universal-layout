@@ -1,0 +1,228 @@
+default partial alphanumeric_keys modifier_keys
+xkb_symbols "univEn" {
+    include "ru(common)"
+    // allows RALT to trigger AltGr (third and four) layer
+    include "level3(ralt_switch)"
+    modifier_map Mod5 { <LVL3> };
+    modifier_map Mod5 { <RALT> };
+
+    name[Group1] = "Eng";
+
+    // key to cycle between language groups
+    // key <CAPS> { [ ISO_Next_Group ] };
+
+    // Numbers / Symbols row
+    // Note: Numbers and Symbols are swapped as it is better for programming stuff.
+
+    key <AE01> {
+        type = "FOUR_LEVEL",
+        symbols = [ exclam, 1, U00B9, U00A1 ]
+    };
+    key <AE02> {
+        type = "FOUR_LEVEL",
+        symbols = [ at, 2, U00B2, U00BD ]
+    };
+    key <AE03> {
+        type = "FOUR_LEVEL",
+        symbols = [ numbersign, 3, U00B3, U2153 ]
+    };
+    key <AE04> {
+        type = "FOUR_LEVEL",
+        symbols = [ dollar, 4, U2074, U00BC ]
+    };
+    key <AE05> {
+        type = "FOUR_LEVEL",
+        symbols = [ percent, 5, U2030 ]
+    };
+    key <AE06> {
+        type = "FOUR_LEVEL",
+        symbols = [ asciicircum, 6, U02C6 ]
+    };
+    key <AE07> {
+        type = "FOUR_LEVEL",
+        symbols = [ question, 7, U00BF, U2048 ]
+    };
+    key <AE08> {
+        type = "FOUR_LEVEL",
+        symbols = [ asterisk, 8, U221E ]
+    };
+    key <AE09> {
+        type = "FOUR_LEVEL",
+        symbols = [ parenleft, 9, U2018, U201C ]
+    };
+    key <AE10> {
+        type = "FOUR_LEVEL",
+        symbols = [ parenright, 0, U2019, U201D ]
+    };
+
+
+    // Non-Breaking Space in third layer
+    key <SPCE> {[ space, space, U00A0, U00A0 ]};
+
+    // Combo-keys, similar symbols in one key
+
+    key <BKSL> {
+        type = "FOUR_LEVEL",
+        symbols = [ slash, bar, backslash, U00A6 ]
+    };
+    key <TLDE> {
+        type = "FOUR_LEVEL",
+        symbols = [ apostrophe, quotedbl, grave, U2022 ]
+    };
+    key <AE11> {
+        type = "FOUR_LEVEL",
+        symbols = [ minus, underscore, U2013, U2014 ]
+    };
+    key <AE12> {
+        type = "FOUR_LEVEL",
+        symbols = [ equal, plus, U2260, U00B1 ]
+    };
+
+    // Main type cluster keys
+
+    // Q W E R T
+    key <AD01> {
+        type = "FOUR_LEVEL_ALPHABETIC",
+        symbols = [ q,     Q,     U03C8, U03A8 ]
+    };
+    key <AD02> {
+        type = "FOUR_LEVEL_ALPHABETIC",
+        symbols = [ w,     W,     U03C9, U03A9 ]
+    };
+    key <AD03> {
+        type = "FOUR_LEVEL_ALPHABETIC",
+        symbols = [ e,     E,     U20AC, U20AC ]
+    };
+    key <AD04> {
+        type = "FOUR_LEVEL_ALPHABETIC",
+        symbols = [ r,     R,     U00AE, U00AE ]
+    };
+    key <AD05> {
+        type = "FOUR_LEVEL_ALPHABETIC",
+        symbols = [ t,     T,     U0451, U0401 ]
+    };
+
+    // Y U I O P [ ]
+    key <AD06> {
+        type = "FOUR_LEVEL_ALPHABETIC",
+        symbols = [ y,     Y,     U00A5, U00A5 ]
+    };
+    key <AD07> {
+        type = "FOUR_LEVEL_ALPHABETIC",
+        symbols = [ u,     U,     U03BB, U039B ]
+    };
+    key <AD08> {
+        type = "FOUR_LEVEL_ALPHABETIC",
+        symbols = [ i,     I     ]
+    };
+    key <AD09> {
+        type = "FOUR_LEVEL_ALPHABETIC",
+        symbols = [ o,     O     ]
+    };
+    key <AD10> {
+        type = "FOUR_LEVEL_ALPHABETIC",
+        symbols = [ p,     P,     U03C0, U03A0 ]
+    };
+    key <AD11> {
+        type = "FOUR_LEVEL_ALPHABETIC",
+        symbols = [ bracketleft, braceleft, bracketleft, braceleft ]
+    };
+    key <AD12> {
+        type = "FOUR_LEVEL_ALPHABETIC",
+        symbols = [ bracketright, braceright, bracketright, braceright ]
+    };
+
+    // A S D F G
+    key <AC01> {
+        type = "FOUR_LEVEL_ALPHABETIC",
+        symbols = [ a,     A,     U03B1, U0391 ]
+    };
+    key <AC02> {
+        type = "FOUR_LEVEL_ALPHABETIC",
+        symbols = [ s,     S,     U00A7, U03A3 ]
+    };
+    key <AC03> {
+        type = "FOUR_LEVEL_ALPHABETIC",
+        symbols = [ d,     D,     U00B0, U0394 ]
+    };
+    key <AC04> {
+        type = "FOUR_LEVEL_ALPHABETIC",
+        symbols = [ f,     F,     U00A3, U00A3 ]
+    };
+    key <AC05> {
+        type = "FOUR_LEVEL_ALPHABETIC",
+        symbols = [ g,     G,     U03B3, U03B3 ]
+    };
+
+    // H J K L ; '
+    key <AC06> {
+        type = "FOUR_LEVEL_ALPHABETIC",
+        symbols = [ h,     H,     U20BD, U20BD ]
+    };
+    key <AC07> {
+        type = "FOUR_LEVEL_ALPHABETIC",
+        symbols = [ j,     J,     U00F8, U00D8 ]
+    };
+    key <AC08> {
+        type = "FOUR_LEVEL_ALPHABETIC",
+        // XKB doesn't support ligatures input
+        // so 3 and 4 positions are used for macro keys.
+        symbols = [ k,     K,     XF86Macro1, XF86Macro2 ]
+    };
+    key <AC09> {
+        type = "FOUR_LEVEL_ALPHABETIC",
+        symbols = [ l,     L,     U00AB, U2190 ]
+    };
+    key <AC10> {
+        type = "FOUR_LEVEL_ALPHABETIC",
+        symbols = [ XF86Macro1, XF86Macro2, U00BB, U2192 ]
+    };
+    key <AC11> {
+        type = "FOUR_LEVEL_ALPHABETIC",
+        symbols = [ asciitilde, U2248, asciitilde, U2248 ]
+    };
+
+    // Z X C V B
+    key <AB01> {
+        type = "FOUR_LEVEL_ALPHABETIC",
+        symbols = [ z,     Z,     U03BC, U039C ]
+    };
+    key <AB02> {
+        type = "FOUR_LEVEL_ALPHABETIC",
+        symbols = [ x,     X,     U00D7, U00D7]
+    };
+    key <AB03> {
+        type = "FOUR_LEVEL_ALPHABETIC",
+        symbols = [ c,     C,     U00A9 , U00A2]
+    };
+    key <AB04> {
+        type = "FOUR_LEVEL_ALPHABETIC",
+        symbols = [ v,     V,     U221A, U221A ]
+    };
+    key <AB05> {
+        type = "FOUR_LEVEL_ALPHABETIC",
+        symbols = [ b,     B,     U03B2, U0392 ]
+    };
+
+    // N M , . &
+    key <AB06> {
+        type = "FOUR_LEVEL_ALPHABETIC",
+        symbols = [ n,     N,     U03B7, U0397 ]
+    };
+    key <AB07> {
+        type = "FOUR_LEVEL_ALPHABETIC",
+        symbols = [ m,     M,     U044A, U042A ]
+    };
+    key <AB08> {
+        type = "FOUR_LEVEL_ALPHABETIC",
+        symbols = [ comma, semicolon, less, U2264 ]
+    };
+    key <AB09> {
+        type = "FOUR_LEVEL_ALPHABETIC",
+        symbols = [ period, colon, greater, U2265 ]
+    };
+    key <AB10> {
+        type = "FOUR_LEVEL_ALPHABETIC",
+        symbols = [ ampersand, ampersand, ampersand, U2026 ]
+    };
+};

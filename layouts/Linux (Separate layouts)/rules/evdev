@@ -1,0 +1,5 @@
+! option	= symbols
+univEn:univEn = +univEn(univEn)
+univRu:univRu = +univRu(univRu)
+
+! include %S/evdev
