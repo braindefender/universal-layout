@@ -1,6 +1,6 @@
-! option = symbols
-ul_ortho_combo:ul_ortho_combo= +ul_ortho_combo(ul_ortho_combo)
-ul_ortho_eng:ul_ortho_eng= +ul_ortho_eng(ul_ortho_eng)
-ul_ortho_rus:ul_ortho_rus= +ul_ortho_rus(ul_ortho_rus)
-
+// Include the system `evdev` file
 ! include %S/evdev
+
+! option = symbols
+  ulo_eng:ulo_eng = +ulo_eng(ulo_eng)
+  ulo_rus:ulo_rus = +ulo_rus(ulo_rus)

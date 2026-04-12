@@ -1,6 +1,6 @@
 partial alphanumeric_keys modifier_keys
-xkb_symbols "ul_ortho_rus" {
-    include "ru(common)"
+xkb_symbols "ulo_rus" {
+    include "pc+ru(common)+inet(evdev)"
     // allows RALT to trigger AltGr (third and four) layer
     include "level3(ralt_switch)"
 

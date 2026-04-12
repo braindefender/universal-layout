@@ -1,30 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xkbConfigRegistry SYSTEM "xkb.dtd">
 <xkbConfigRegistry version="1.1">
-  <optionList>
-    <group allowMultipleSelection="true">
+  <layoutList>
+    <layout>
       <configItem>
-        <name>Universal Layout</name>
-        <description>Universal Layout EN/RU</description>
+        <name>ulo_eng</name>
+        <shortDescription>ulo_eng</shortDescription>
+        <description>Universal Layout Ortho (English)</description>
+        <languageList>
+          <iso639Id>und</iso639Id>
+        </languageList>
       </configItem>
-      <option>
-        <configItem>
-          <name>ul_ortho_combo:ul_ortho_combo</name>
-          <description>Enable Combo Ortho Layout</description>
-        </configItem>
-      </option>
-      <option>
-        <configItem>
-          <name>ul_ortho_eng:ul_ortho_eng</name>
-          <description>Enable English Ortho Layout</description>
-        </configItem>
-      </option>
-      <option>
-        <configItem>
-          <name>ul_ortho_rus:ul_ortho_rus</name>
-          <description>Enable Russian Ortho Layout</description>
-        </configItem>
-      </option>
-    </group>
-  </optionList>
+      <variantList/>
+    </layout>
+    <layout>
+      <configItem>
+        <name>ulo_rus</name>
+        <shortDescription>ulo_rus</shortDescription>
+        <description>Universal Layout Ortho (Russian)</description>
+        <languageList>
+          <iso639Id>und</iso639Id>
+        </languageList>
+      </configItem>
+      <variantList/>
+    </layout>
+    <layout>
+      <configItem>
+        <name>ulo_combo</name>
+        <shortDescription>ulo_combo</shortDescription>
+        <description>Universal Layout Ortho (Combo)</description>
+        <languageList>
+          <iso639Id>und</iso639Id>
+        </languageList>
+      </configItem>
+      <variantList/>
+    </layout>
+  </layoutList>
 </xkbConfigRegistry>

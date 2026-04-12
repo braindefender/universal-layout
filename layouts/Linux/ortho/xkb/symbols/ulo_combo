@@ -1,13 +1,13 @@
 default partial alphanumeric_keys modifier_keys
-xkb_symbols "ul_ortho_combo" {
-    include "pc+us(basic)+ru(common)+inet(evdev)"
+xkb_symbols "ulo_combo" {
+    include "pc+us+inet(evdev)"
     // allows RALT to trigger AltGr (third and four) layer
     include "level3(ralt_switch)"
 
     modifier_map Mod5 { <LVL3> };
     modifier_map Mod5 { <RALT> };
 
-    name[Group1]= "English (EN)";
+    name[Group1]= "English (US)";
     name[Group2]= "Russian (RU)";
 
     // key to cycle between language groups
