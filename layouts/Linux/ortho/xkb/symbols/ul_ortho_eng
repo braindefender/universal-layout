@@ -17,43 +17,53 @@ xkb_symbols "ul_ortho_eng" {
 
     key <AE01> {
         type = "FOUR_LEVEL",
-        symbols[Group1] = [ exclam, 1, U00B9, U00A1 ]
+        //                  !             1             ¹             ¡
+        symbols[Group1] = [ exclam,       1,            U00B9,        U00A1 ]
     };
     key <AE02> {
         type = "FOUR_LEVEL",
-        symbols[Group1] = [ at, 2, U00B2, U00BD ]
+        //                  @             2             ²             ½
+        symbols[Group1] = [ at,           2,            U00B2,        U00BD ]
     };
     key <AE03> {
         type = "FOUR_LEVEL",
-        symbols[Group1] = [ numbersign, 3, U00B3, U2153 ]
+        //                  #             3             ³             ⅓
+        symbols[Group1] = [ numbersign,   3,            U00B3,        U2153 ]
     };
     key <AE04> {
         type = "FOUR_LEVEL",
-        symbols[Group1] = [ dollar, 4, U2074, U00BC ]
+        //                  $             4             ⁴             ¼
+        symbols[Group1] = [ dollar,       4,            U2074,        U00BC ]
     };
     key <AE05> {
         type = "FOUR_LEVEL",
-        symbols[Group1] = [ percent, 5, U2030 ]
+        //                  %             5             ‰             ‰
+        symbols[Group1] = [ percent,      5,            U2030,        U2030 ]
     };
     key <AE06> {
         type = "FOUR_LEVEL",
-        symbols[Group1] = [ asciicircum, 6, U02C6 ]
+        //                  ^             6             ˆ             ˆ
+        symbols[Group1] = [ asciicircum,  6,            U02C6,        U02C6 ]
     };
     key <AE07> {
         type = "FOUR_LEVEL",
-        symbols[Group1] = [ question, 7, U00BF, U2048 ]
+        //                  ?             7             ¿             ⁈
+        symbols[Group1] = [ question,     7,            U00BF,        U2048 ]
     };
     key <AE08> {
         type = "FOUR_LEVEL",
-        symbols[Group1] = [ asterisk, 8, U221E ]
+        //                  *             8             ∞             ∞
+        symbols[Group1] = [ asterisk,     8,            U221E,        U221E ]
     };
     key <AE09> {
         type = "FOUR_LEVEL",
-        symbols[Group1] = [ parenleft, 9, U2018, U201C ]
+        //                  (             9             ‘             “
+        symbols[Group1] = [ parenleft,    9,            U2018,        U201C ]
     };
     key <AE10> {
         type = "FOUR_LEVEL",
-        symbols[Group1] = [ parenright, 0, U2019, U201D ]
+        //                  )             0             ’             ”
+        symbols[Group1] = [ parenright,   0,            U2019,        U201D ]
     };
 
     // Non-Breaking Space in third layer
@@ -62,27 +72,33 @@ xkb_symbols "ul_ortho_eng" {
     // Combo-keys, similar symbols in one key
     key <AD11> {
         type = "FOUR_LEVEL",
-        symbols[Group1] = [ comma, semicolon, comma, semicolon ]
+        //                  ,             ;             ,             ;
+        symbols[Group1] = [ comma,        semicolon,    comma,        semicolon ]
     };
     key <AD12> {
         type = "FOUR_LEVEL",
-        symbols[Group1] = [ period, colon, period, colon ]
+        //                  .             :             .             :
+        symbols[Group1] = [ period,       colon,        period,       colon ]
     };
     key <BKSL> {
         type = "FOUR_LEVEL",
-        symbols[Group1] = [ slash, bar, backslash, U00A6 ]
+        //                  /             |             \             ¦
+        symbols[Group1] = [ slash,        bar,          backslash,    U00A6 ]
     };
     key <TLDE> {
         type = "FOUR_LEVEL",
-        symbols[Group1] = [ apostrophe, quotedbl, grave, U2022 ]
+        //                  '             "             `             •
+        symbols[Group1] = [ apostrophe,   quotedbl,     grave,        U2022 ]
     };
     key <AE11> {
         type = "FOUR_LEVEL",
-        symbols[Group1] = [ minus, underscore, U2013, U2014 ]
+        //                  -             _             –             —
+        symbols[Group1] = [ minus,        underscore,   U2013,        U2014 ]
     };
     key <AE12> {
         type = "FOUR_LEVEL",
-        symbols[Group1] = [ equal, plus, U2260, U00B1 ]
+        //                  =             +             ≠             ±
+        symbols[Group1] = [ equal,        plus,         U2260,        U00B1 ]
     };
 
     // Main type cluster keys
@@ -90,132 +106,162 @@ xkb_symbols "ul_ortho_eng" {
     // Q W E R T
     key <AD01> {
         type = "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1] = [ q,     Q,     U03C8, U03A8 ]
+        //                  q             Q             ψ             Ψ
+        symbols[Group1] = [ q,            Q,            U03C8,        U03A8 ]
     };
     key <AD02> {
         type = "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1] = [ w,     W,     U03C9, U03A9 ]
+        //                  w             W             ω             Ω
+        symbols[Group1] = [ w,            W,            U03C9,        U03A9 ]
     };
     key <AD03> {
         type = "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1] = [ e,     E,     U20AC, U20AC ]
+        //                  e             E             €             €
+        symbols[Group1] = [ e,            E,            U20AC,        U20AC ]
     };
     key <AD04> {
         type = "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1] = [ r,     R,     U00AE, U00AE ]
+        //                  r             R             ®             ®
+        symbols[Group1] = [ r,            R,            U00AE,        U00AE ]
     };
     key <AD05> {
         type = "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1] = [ t,     T,     U0451, U0401 ]
+        //                  t             T             ё             Ё
+        symbols[Group1] = [ t,            T,            U0451,        U0401 ]
     };
 
     // Y U I O P
     key <AD06> {
         type = "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1] = [ y,     Y,     U00A5, U00A5 ]
+        //                  y             Y             ¥             ¥
+        symbols[Group1] = [ y,            Y,            U00A5,        U00A5 ]
     };
     key <AD07> {
         type = "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1] = [ u,     U,     U03BB, U039B ]
+        //                  u             U             λ             λ
+        symbols[Group1] = [ u,            U,            U03BB,        U039B ]
     };
     key <AD08> {
         type = "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1] = [ i,     I,     U0449, U0429 ]
+        //                  i             I             щ             Щ
+        symbols[Group1] = [ i,            I,            U0449,        U0429 ]
     };
     key <AD09> {
         type = "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1] = [ o,     O,     less, U2264 ]
+        //                  o             O             <             ≤
+        symbols[Group1] = [ o,            O,            less,         U2264 ]
     };
     key <AD10> {
         type = "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1] = [ p,     P,     greater, U2265 ]
+        //                  p             P             >             ≥
+        symbols[Group1] = [ p,            P,            greater,      U2265 ]
     };
 
     // A S D F G
     key <AC01> {
         type = "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1] = [ a,     A,     U03B1, U0391 ]
+        //                  a             A             α             Α
+        symbols[Group1] = [ a,            A,            U03B1,        U0391 ]
     };
     key <AC02> {
         type = "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1] = [ s,     S,     U00A7, U03A3 ]
+        //                  s             S             §             Σ
+        symbols[Group1] = [ s,            S,            U00A7,        U03A3 ]
     };
     key <AC03> {
         type = "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1] = [ d,     D,     U00B0, U0394 ]
+        //                  d             D             °             Δ
+        symbols[Group1] = [ d,            D,            U00B0,        U0394 ]
     };
     key <AC04> {
         type = "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1] = [ f,     F,     U00A3, U00A3 ]
+        //                  f             F             £             £
+        symbols[Group1] = [ f,            F,            U00A3,        U00A3 ]
     };
     key <AC05> {
         type = "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1] = [ g,     G,     U03B3, U03B3 ]
+        //                  g             G             γ             γ
+        symbols[Group1] = [ g,            G,            U03B3,        U03B3 ]
     };
 
     // H J K L ~
     key <AC06> {
         type = "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1] = [ h,     H,     U20BD, U20BD ]
+        //                  h             H             ₽             ₽
+        symbols[Group1] = [ h,            H,            U20BD,        U20BD ]
     };
     key <AC07> {
         type = "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1] = [ j,     J,     U00F8, U00D8 ]
+        //                  j             J             ø             Ø
+        symbols[Group1] = [ j,            J,            U00F8,        U00D8 ]
     };
     key <AC08> {
         type = "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1] = [ k,     K,     "=>", "->" ]
+        //                  k             K             =>            ->
+        symbols[Group1] = [ k,            K,            U003E,        U003E ]
     };
     key <AC09> {
         type = "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1] = [ l,     L,     U00AB, U2190 ]
+        //                  l             L             «             ←
+        symbols[Group1] = [ l,            L,            U00AB,        U2190 ]
     };
     key <AC10> {
         type = "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1] = [ U007E, U2248, U00BB, U2192 ]
+        //                  ~             ≈             »             →
+        symbols[Group1] = [ U007E,        U2248,        U00BB,        U2192 ]
     };
 
     // Z X C V B
     key <AB01> {
         type = "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1] = [ z,     Z,     U03BC, U039C ]
+        //                  z             Z             μ             Μ
+        symbols[Group1] = [ z,            Z,            U03BC,        U039C ]
     };
     key <AB02> {
         type = "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1] = [ x,     X,     U00D7, U00D7]
+        //                  x             X             ×             ×
+        symbols[Group1] = [ x,            X,            U00D7,        U00D7]
     };
     key <AB03> {
         type = "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1] = [ c,     C,     U00A9 , U00A2]
+        //                  c             C             ©             ¢
+        symbols[Group1] = [ c,            C,            U00A9,        U00A2]
     };
     key <AB04> {
         type = "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1] = [ v,     V,     U221A, U221A ]
+        //                  v             V             √             √
+        symbols[Group1] = [ v,            V,            U221A,        U221A ]
     };
     key <AB05> {
         type = "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1] = [ b,     B,     U03B2, U0392 ]
+        //                  b             B             β             Β
+        symbols[Group1] = [ b,            B,            U03B2,        U0392 ]
     };
 
     // N M & [ ]
     key <AB06> {
         type = "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1] = [ n,     N,     U03B7, U0397 ]
+        //                  n             N             η             Η
+        symbols[Group1] = [ n,            N,            U03B7,        U0397 ]
     };
     key <AB07> {
         type = "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1] = [ m,     M,     U044A, U042A ]
+        //                  m             M             ъ             Ъ
+        symbols[Group1] = [ m,            M,            U044A,        U042A ]
     };
     key <AB08> {
         type = "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1] = [ ampersand, ampersand, ampersand, U2026 ]
+        //                  &             &             &             …
+        symbols[Group1] = [ ampersand,    ampersand,    ampersand,    U2026 ]
     };
     key <AB09> {
         type = "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1] = [ bracketleft, braceleft, bracketleft, braceleft ]
+        //                  [             {             [             {
+        symbols[Group1] = [ bracketleft,  braceleft,    bracketleft,  braceleft ]
     };
     key <AB10> {
         type = "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1] = [ bracketright, braceright, bracketright, braceright ]
+        //                  ]             }             ]             }
+        symbols[Group1] = [ bracketright, braceright,   bracketright, braceright ]
     };
 };

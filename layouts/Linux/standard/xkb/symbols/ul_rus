@@ -224,6 +224,7 @@ xkb_symbols "ul_rus" {
     };
     key <AB10> {
         type = "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1] = [ U044E,     U042E,     ampersand, U2026 ]
+        //                  б           Б           &           …
+        symbols[Group1] = [ U044E,      U042E,      ampersand,  U2026 ]
     };
 };
