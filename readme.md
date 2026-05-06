@@ -92,7 +92,7 @@
 
 ### Inverted
 
-![ul-standard-vs-inverted](./images//ul-standard-vs-inverted.jpg)
+![ul-standard-vs-inverted](./images/ul-standard-vs-inverted.jpg)
 
 Данные варианты обозначены как `*-inverted-*`. В них цифровой и символный ряды поменяны местами.
 
@@ -133,7 +133,7 @@
 
 ## Как установить?
 
-Выбрать необходимую версию (Standard или Ortho), тип (раздельную или merged) и вариант (обычную или inverted). В папке `layouts` репозитория присутствуют все версии для Windows, Linux и macOS.
+В папке `layouts` присутствуют все версии для Windows, Linux и macOS.
 
 ### Windows 10/11
 
@@ -141,6 +141,8 @@
 2. _(Опционально)_ Удалить из списка стандартную раскладку для английского языка. В случае, если система установлена на английском языке, то можно целиком удалить русский язык на предыдущем экране.
 3. _(Опционально)_ Установить раскладку в качестве стандартной для Экрана входа Windows в меню `Административные языковые параметры` > `Копировать параметры`.
 4. Перезагрузить систему — лишним не будет.
+
+> Записи в реестре, которые определяют доступные раскладки находятся по адресу `Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layouts\`
 
 ### Linux
 
@@ -168,6 +170,9 @@
 3. Далее, способ установки зависит от окружения рабочего стола (Desktop Environment):
 
 #### KDE
+
+> [!IMPORTANT]
+> В KDE нельзя использовать Merged варианты раскладок, они не поддерживаются реализацией XKB в Plasma!
 
 Самый простой способ — это добавить в системе две раскладки: `universal-layout-english` и `universal-layout-russian`, а затем удалить стандартную раскладку.
 
@@ -204,7 +209,7 @@ xkbcomp $HOME/.config/xkb/symbols/ul_combo $DISPLAY 2>&1
 
 Для изменения или создания раскладок под Windows понадобится программа [Microsoft Keyboard Layout Creator](https://www.microsoft.com/en-us/download/details.aspx?id=102134).
 
-> EXE'шник установщика есть и в репозитории в папке `layouts/Windows/software/msklc.exe`.
+> EXE'шник установщика есть и в репозитории в папке `layouts/Windows/msklc.exe`.
 
 Программа древняя и давно не обновлялась Microsoft, поэтому для его работы нужен [.NET Framework 2.0](https://www.microsoft.com/ru-ru/download/details.aspx?id=6041).
 
