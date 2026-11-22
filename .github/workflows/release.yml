@@ -1,0 +1,35 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Pack macOS layout bundles
+        run: |
+          archive="macos-universal-layout-${GITHUB_REF_NAME}.zip"
+          mkdir -p dist
+          while IFS= read -r -d '' bundle; do
+            dir=$(dirname "$bundle")
+            name=$(basename "$bundle")
+            (cd "$dir" && zip -qr "$GITHUB_WORKSPACE/dist/$archive" "$name")
+          done < <(find layouts/macOS -type d -name '*.bundle' -print0)
+          echo "ARCHIVE=dist/$archive" >> "$GITHUB_ENV"
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" "$ARCHIVE" \
+            --title "Universal Layout $GITHUB_REF_NAME" \
+            --generate-notes
