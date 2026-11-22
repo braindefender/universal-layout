@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleIdentifier</key>
+	<string>com.klayde.keyboardlayout.uloru</string>
+	<key>CFBundleName</key>
+	<string>Universal Layout Ortho Russian</string>
+	<key>CFBundleVersion</key>
+	<string>2.0</string>
+	<key>KLInfo_ULORU</key>
+	<dict>
+		<key>TICapsLockLanguageSwitchCapable</key>
+		<false/>
+		<key>TISIconIsTemplate</key>
+		<true/>
+		<key>TISInputSourceID</key>
+		<string>com.klayde.keyboardlayout.uloru.uloru</string>
+		<key>TISIntendedLanguage</key>
+		<string>ru</string>
+	</dict>
+</dict>
+</plist>

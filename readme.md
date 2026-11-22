@@ -205,10 +205,15 @@ xkbcomp $HOME/.config/xkb/symbols/ul_combo $DISPLAY 2>&1
 
 ### macOS
 
-1. Файл `layouts/macOS/Universal.bundle` скопировать в `~/Library/Keyboard Layouts`.
+В папке `layouts/macOS` лежат `.bundle`-файлы, сгенерированные из TOML-схем с помощью [klayde](https://github.com/braindefender/klayde). Они сгруппированы по типу раскладки (`Standard` / `Ortho`), а внутри — по инверсии цифрового ряда (`Normal` / `Inverted`). Каждый файл — самостоятельная раскладка с именем вида `Universal Layout <Standard|Ortho> <English|Russian|Merged> [-Inverted].bundle`.
+
+1. Скопировать нужные `.bundle`-файлы в `~/Library/Keyboard Layouts`.
 2. Перезагрузиться и перезайти в систему.
-3. Выбрать желаемую раскладку в `Настройки системы > Клавиатура > Источники ввода`. Она будет в разделе с Русской раскладкой.
-4. _(Опционально)_ Удалить стандартные раскладки русского и английского языка. Для этого в файле `~/Library/Preferences/com.apple.HIToolbox.plist` удалить XML ноды, соответствующие стандартным раскладкам.
+3. Выбрать желаемые раскладки в `Настройки системы > Клавиатура > Источники ввода`. Раскладки русского языка будут в разделе с Русской раскладкой, английского и Merged — в разделе с Английской (США).
+4. _(Опционально)_ Удалить стандартные раскладки русского и английского языка. Для этого в файле `~/Library/Preferences/com.apple.HIToolbox.plist` нужно удалить XML ноды, соответствующие стандартным раскладкам и перезайти в систему.
+
+> [!NOTE]
+> Не обязательно устанавливать все 12 вариантов: достаточно пары `English`/`Russian` (или одного `Merged`) в нужной группе — Standard или Ortho, Normal или Inverted.
 
 ## Разработка
 
@@ -234,15 +239,16 @@ xkbcomp $HOME/.config/xkb/symbols/ul_combo $DISPLAY 2>&1
 
 ### macOS
 
-Для изменения или создания раскладок под macOS понадобится программа [Ukelele](https://software.sil.org/ukelele/).
+Раскладки генерируются из TOML-схем программой [klayde](https://github.com/braindefender/klayde): схема лежит в его репозитории (`layouts/universal-layout`), а готовые `.bundle`-файлы попадают в этот репозиторий (`layouts/macOS`).
 
 ![ukelele](./images/software/ukelele.png)
 
-С помощью неё можно открыть файлы формата `.bundle`, установить раскладку напрямую в систему или экспортировать в файл.
+Также, можно использовать [Ukelele](https://software.sil.org/ukelele/). С помощью этого приложения можно открыть файлы формата `.bundle`, установить раскладку напрямую в систему или экспортировать в файл
 
 ## Благодарности
 
-Никите Прокопову [@nikitonsky](https://twitter.com/nikitonsky) за оригинальную идею и ресурсы. Репозиторий оригинальной Universal Layout на [GitHub](https://github.com/tonsky/Universal-Layout/).
+Никите Прокопову [@nikitonsky](https://twitter.com/nikitonsky) за оригинальную идею и ресурсы.
+Репозиторий оригинальной Universal Layout на [GitHub](https://github.com/tonsky/Universal-Layout/).
 
 Дмитрию Ковалёву [@devpew](https://devpew.com/blog/) за [хорошие видео](https://www.youtube.com/@johenews21/videos) о кастомных механических и раздельных эргономичных клавиатурах.
 
