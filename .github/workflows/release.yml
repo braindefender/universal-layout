@@ -31,10 +31,16 @@ jobs:
           (cd layouts/Windows && zip -qr "$GITHUB_WORKSPACE/dist/$archive" Standard Ortho)
           echo "WIN_ARCHIVE=dist/$archive" >> "$GITHUB_ENV"
 
+      - name: Pack Linux layouts
+        run: |
+          archive="linux-universal-layout-${GITHUB_REF_NAME}.zip"
+          (cd layouts/Linux && zip -qr "$GITHUB_WORKSPACE/dist/$archive" Standard Ortho)
+          echo "LINUX_ARCHIVE=dist/$archive" >> "$GITHUB_ENV"
+
       - name: Create GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "$GITHUB_REF_NAME" "$ARCHIVE" "$WIN_ARCHIVE" \
+          gh release create "$GITHUB_REF_NAME" "$ARCHIVE" "$WIN_ARCHIVE" "$LINUX_ARCHIVE" \
             --title "Universal Layout $GITHUB_REF_NAME" \
             --notes-file release-notes.md

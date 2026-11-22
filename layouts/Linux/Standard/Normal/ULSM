@@ -1,0 +1,57 @@
+default partial alphanumeric_keys
+xkb_symbols "ULSM" {
+    include "pc+inet(evdev)"
+    include "level3(ralt_switch)"
+    name[Group1]= "Universal Layout Standard Merged";
+    key <CAPS> { [ ISO_Next_Group ] };
+    key <AE01> { type[Group1]="FOUR_LEVEL", type[Group2]="FOUR_LEVEL", symbols[Group1] = [ 1, exclam, onesuperior, exclamdown ], symbols[Group2] = [ 1, exclam, onesuperior, exclamdown ] };
+    key <AE02> { type[Group1]="FOUR_LEVEL", type[Group2]="FOUR_LEVEL", symbols[Group1] = [ 2, at, twosuperior, onehalf ], symbols[Group2] = [ 2, at, twosuperior, onehalf ] };
+    key <AE03> { type[Group1]="FOUR_LEVEL", type[Group2]="FOUR_LEVEL", symbols[Group1] = [ 3, numbersign, threesuperior, U2153 ], symbols[Group2] = [ 3, numbersign, threesuperior, U2153 ] };
+    key <AE04> { type[Group1]="FOUR_LEVEL", type[Group2]="FOUR_LEVEL", symbols[Group1] = [ 4, dollar, U2074, onequarter ], symbols[Group2] = [ 4, dollar, U2074, onequarter ] };
+    key <AE05> { type[Group1]="FOUR_LEVEL", type[Group2]="FOUR_LEVEL", symbols[Group1] = [ 5, percent, U2030 ], symbols[Group2] = [ 5, percent, U2030 ] };
+    key <AE06> { type[Group1]="FOUR_LEVEL", type[Group2]="FOUR_LEVEL", symbols[Group1] = [ 6, asciicircum, U02C6 ], symbols[Group2] = [ 6, asciicircum, U02C6 ] };
+    key <AE07> { type[Group1]="FOUR_LEVEL", type[Group2]="FOUR_LEVEL", symbols[Group1] = [ 7, question, questiondown, U2048 ], symbols[Group2] = [ 7, question, questiondown, U2048 ] };
+    key <AE08> { type[Group1]="FOUR_LEVEL", type[Group2]="FOUR_LEVEL", symbols[Group1] = [ 8, asterisk, infinity ], symbols[Group2] = [ 8, asterisk, infinity ] };
+    key <AE09> { type[Group1]="FOUR_LEVEL", type[Group2]="FOUR_LEVEL", symbols[Group1] = [ 9, parenleft, leftsinglequotemark, leftdoublequotemark ], symbols[Group2] = [ 9, parenleft, leftsinglequotemark, leftdoublequotemark ] };
+    key <AE10> { type[Group1]="FOUR_LEVEL", type[Group2]="FOUR_LEVEL", symbols[Group1] = [ 0, parenright, rightsinglequotemark, rightdoublequotemark ], symbols[Group2] = [ 0, parenright, rightsinglequotemark, rightdoublequotemark ] };
+    key <AD01> { type[Group1]="FOUR_LEVEL_ALPHABETIC", type[Group2]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ q, Q, Greek_psi, Greek_PSI ], symbols[Group2] = [ Cyrillic_shorti, Cyrillic_SHORTI, Greek_psi, Greek_PSI ] };
+    key <AD02> { type[Group1]="FOUR_LEVEL_ALPHABETIC", type[Group2]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ w, W, Greek_omega, Greek_OMEGA ], symbols[Group2] = [ Cyrillic_tse, Cyrillic_TSE, Greek_omega, Greek_OMEGA ] };
+    key <AD03> { type[Group1]="FOUR_LEVEL_ALPHABETIC", type[Group2]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ e, E, EuroSign, EuroSign ], symbols[Group2] = [ Cyrillic_u, Cyrillic_U, EuroSign, EuroSign ] };
+    key <AD04> { type[Group1]="FOUR_LEVEL_ALPHABETIC", type[Group2]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ r, R, registered, registered ], symbols[Group2] = [ Cyrillic_ka, Cyrillic_KA, registered, registered ] };
+    key <AD05> { type[Group1]="FOUR_LEVEL_ALPHABETIC", type[Group2]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ t, T, Cyrillic_io, Cyrillic_IO ], symbols[Group2] = [ Cyrillic_ie, Cyrillic_IE, Cyrillic_io, Cyrillic_IO ] };
+    key <AD06> { type[Group1]="FOUR_LEVEL_ALPHABETIC", type[Group2]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ y, Y, yen, yen ], symbols[Group2] = [ Cyrillic_en, Cyrillic_EN, yen, yen ] };
+    key <AD07> { type[Group1]="FOUR_LEVEL_ALPHABETIC", type[Group2]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ u, U, Greek_lamda, Greek_LAMDA ], symbols[Group2] = [ Cyrillic_ghe, Cyrillic_GHE, Greek_lamda, Greek_LAMDA ] };
+    key <AD08> { type[Group1]="FOUR_LEVEL_ALPHABETIC", type[Group2]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ i, I ], symbols[Group2] = [ Cyrillic_sha, Cyrillic_SHA ] };
+    key <AD09> { type[Group1]="FOUR_LEVEL_ALPHABETIC", type[Group2]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ o, O ], symbols[Group2] = [ Cyrillic_shcha, Cyrillic_SHCHA ] };
+    key <AD10> { type[Group1]="FOUR_LEVEL_ALPHABETIC", type[Group2]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ p, P, Greek_pi, Greek_PI ], symbols[Group2] = [ Cyrillic_ze, Cyrillic_ZE, Greek_pi, Greek_PI ] };
+    key <AC01> { type[Group1]="FOUR_LEVEL_ALPHABETIC", type[Group2]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ a, A, Greek_alpha, Greek_ALPHA ], symbols[Group2] = [ Cyrillic_ef, Cyrillic_EF, Greek_alpha, Greek_ALPHA ] };
+    key <AC02> { type[Group1]="FOUR_LEVEL_ALPHABETIC", type[Group2]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ s, S, section, Greek_SIGMA ], symbols[Group2] = [ Cyrillic_yeru, Cyrillic_YERU, section, Greek_SIGMA ] };
+    key <AC03> { type[Group1]="FOUR_LEVEL_ALPHABETIC", type[Group2]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ d, D, degree, Greek_DELTA ], symbols[Group2] = [ Cyrillic_ve, Cyrillic_VE, degree, Greek_DELTA ] };
+    key <AC04> { type[Group1]="FOUR_LEVEL_ALPHABETIC", type[Group2]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ f, F, sterling, sterling ], symbols[Group2] = [ Cyrillic_a, Cyrillic_A, sterling, sterling ] };
+    key <AC05> { type[Group1]="FOUR_LEVEL_ALPHABETIC", type[Group2]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ g, G, Greek_gamma, Greek_GAMMA ], symbols[Group2] = [ Cyrillic_pe, Cyrillic_PE, Greek_gamma, Greek_GAMMA ] };
+    key <AC06> { type[Group1]="FOUR_LEVEL_ALPHABETIC", type[Group2]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ h, H, U20BD, U20BD ], symbols[Group2] = [ Cyrillic_er, Cyrillic_ER, U20BD, U20BD ] };
+    key <AC07> { type[Group1]="FOUR_LEVEL_ALPHABETIC", type[Group2]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ j, J, oslash, Oslash ], symbols[Group2] = [ Cyrillic_o, Cyrillic_O, oslash, Oslash ] };
+    key <AC08> { type[Group1]="FOUR_LEVEL_ALPHABETIC", type[Group2]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ k, K ], symbols[Group2] = [ Cyrillic_el, Cyrillic_EL ] };
+    key <AC09> { type[Group1]="FOUR_LEVEL_ALPHABETIC", type[Group2]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ l, L, guillemetleft, leftarrow ], symbols[Group2] = [ Cyrillic_de, Cyrillic_DE, guillemetleft, leftarrow ] };
+    key <AC10> { type[Group1]="FOUR_LEVEL_ALPHABETIC", type[Group2]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ NoSymbol, NoSymbol, guillemetright, rightarrow ], symbols[Group2] = [ Cyrillic_zhe, Cyrillic_ZHE, guillemetright, rightarrow ] };
+    key <AB01> { type[Group1]="FOUR_LEVEL_ALPHABETIC", type[Group2]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ z, Z, Greek_mu, Greek_MU ], symbols[Group2] = [ Cyrillic_ya, Cyrillic_YA, Greek_mu, Greek_MU ] };
+    key <AB02> { type[Group1]="FOUR_LEVEL_ALPHABETIC", type[Group2]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ x, X, multiply ], symbols[Group2] = [ Cyrillic_che, Cyrillic_CHE, multiply ] };
+    key <AB03> { type[Group1]="FOUR_LEVEL_ALPHABETIC", type[Group2]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ c, C, copyright, cent ], symbols[Group2] = [ Cyrillic_es, Cyrillic_ES, copyright, cent ] };
+    key <AB04> { type[Group1]="FOUR_LEVEL_ALPHABETIC", type[Group2]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ v, V, U221A ], symbols[Group2] = [ Cyrillic_em, Cyrillic_EM, U221A ] };
+    key <AB05> { type[Group1]="FOUR_LEVEL_ALPHABETIC", type[Group2]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ b, B, Greek_beta, Greek_BETA ], symbols[Group2] = [ Cyrillic_i, Cyrillic_I, Greek_beta, Greek_BETA ] };
+    key <AB06> { type[Group1]="FOUR_LEVEL_ALPHABETIC", type[Group2]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ n, N, Greek_eta, Greek_ETA ], symbols[Group2] = [ Cyrillic_te, Cyrillic_TE, Greek_eta, Greek_ETA ] };
+    key <AB07> { type[Group1]="FOUR_LEVEL_ALPHABETIC", type[Group2]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ m, M, Cyrillic_hardsign, Cyrillic_HARDSIGN ], symbols[Group2] = [ Cyrillic_softsign, Cyrillic_SOFTSIGN, Cyrillic_hardsign, Cyrillic_HARDSIGN ] };
+    key <AB08> { type[Group1]="FOUR_LEVEL", type[Group2]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ comma, semicolon, less, lessthanequal ], symbols[Group2] = [ comma, semicolon, less, lessthanequal ] };
+    key <AB09> { type[Group1]="FOUR_LEVEL", type[Group2]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ period, colon, greater, greaterthanequal ], symbols[Group2] = [ period, colon, greater, greaterthanequal ] };
+    key <AB10> { type[Group1]="FOUR_LEVEL_ALPHABETIC", type[Group2]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ ampersand, ampersand, ampersand, ellipsis ], symbols[Group2] = [ Cyrillic_yu, Cyrillic_YU, ampersand, ellipsis ] };
+    key <SPCE> { type[Group1]="FOUR_LEVEL", type[Group2]="FOUR_LEVEL", symbols[Group1] = [ space, space, nobreakspace, nobreakspace ], symbols[Group2] = [ space, space, nobreakspace, nobreakspace ] };
+    key <TLDE> { type[Group1]="FOUR_LEVEL", type[Group2]="FOUR_LEVEL", symbols[Group1] = [ apostrophe, quotedbl, grave, U2022 ], symbols[Group2] = [ apostrophe, quotedbl, grave, U2022 ] };
+    key <AE11> { type[Group1]="FOUR_LEVEL", type[Group2]="FOUR_LEVEL", symbols[Group1] = [ minus, underscore, endash, emdash ], symbols[Group2] = [ minus, underscore, endash, emdash ] };
+    key <AE12> { type[Group1]="FOUR_LEVEL", type[Group2]="FOUR_LEVEL", symbols[Group1] = [ equal, plus, notequal, plusminus ], symbols[Group2] = [ equal, plus, notequal, plusminus ] };
+    key <AD11> { type[Group1]="FOUR_LEVEL_ALPHABETIC", type[Group2]="FOUR_LEVEL", symbols[Group1] = [ bracketleft, braceleft, bracketleft, braceleft ], symbols[Group2] = [ Cyrillic_ha, Cyrillic_HA, bracketleft, braceleft ] };
+    key <AD12> { type[Group1]="FOUR_LEVEL_ALPHABETIC", type[Group2]="FOUR_LEVEL", symbols[Group1] = [ bracketright, braceright, bracketright, braceright ], symbols[Group2] = [ Cyrillic_be, Cyrillic_BE, bracketright, braceright ] };
+    key <BKSL> { type[Group1]="FOUR_LEVEL", type[Group2]="FOUR_LEVEL", symbols[Group1] = [ slash, bar, backslash, brokenbar ], symbols[Group2] = [ slash, bar, backslash, brokenbar ] };
+    key <AC11> { type[Group1]="FOUR_LEVEL_ALPHABETIC", type[Group2]="FOUR_LEVEL", symbols[Group1] = [ asciitilde, U2248, asciitilde, U2248 ], symbols[Group2] = [ Cyrillic_e, Cyrillic_E, asciitilde, U2248 ] };
+    key <LSGT> { type[Group1]="FOUR_LEVEL", type[Group2]="FOUR_LEVEL", symbols[Group1] = [ slash, bar, backslash, brokenbar ], symbols[Group2] = [ slash, bar, backslash, brokenbar ] };
+    key <KPDL> { type[Group1]="FOUR_LEVEL", type[Group2]="FOUR_LEVEL", symbols[Group1] = [ KP_Delete, KP_Separator ], symbols[Group2] = [ KP_Delete, KP_Separator ] };
+};

@@ -12,7 +12,7 @@ Standard/Ortho × Normal/Inverted × English/Russian/Merged.
 
 - **Windows** — вместо 4 старых установщиков (`UniEN`, `UniRU`, `universal-layout`, `universal-layout-ortho`) — 12 полных пакетов.
 - **macOS** — вместо одного `Universal.bundle` — 12 отдельных `.bundle`.
-- **Linux** — переименованы XKB symbols (`ul_ortho_*` → `ulo_*`), поправлены `ul_rus` и `rules/evdev`.
+- **Linux** — вместо двух версий — 12 отдельных `XKB`-файлов
 
 Readme переписан под новую структуру, изображения обновлены.
-Раскладки для Windows и macOS получены с помощью [klayde](https://github.com/braindefender/klayde).
+Раскладки для Windows, macOS и Linux получены с помощью [klayde](https://github.com/braindefender/klayde).

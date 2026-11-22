@@ -1,6 +1,0 @@
-! option = symbols
-ul_combo:ul_combo= +ul_combo(ul_combo)
-ul_eng:ul_eng= +ul_eng(ul_eng)
-ul_rus:ul_rus= +ul_rus(ul_rus)
-
-! include %S/evdev

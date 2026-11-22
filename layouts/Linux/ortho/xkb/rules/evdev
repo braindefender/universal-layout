@@ -1,6 +1,0 @@
-// Include the system `evdev` file
-! include %S/evdev
-
-! option = symbols
-  ulo_eng:ulo_eng = +ulo_eng(ulo_eng)
-  ulo_rus:ulo_rus = +ulo_rus(ulo_rus)

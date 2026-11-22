@@ -155,53 +155,49 @@
 
 > Люблю линукс за то, что можно всё настроить. Правда тебе **придётся** всё настроить.
 
-1. Для NixOS: положить XKB файлы рядом с конфигом (или указать путь в symbolsFile до него). Пример:
+В папке `layouts/Linux` лежат XKB symbols-файлы, сгенерированные из TOML-схем с помощью [klayde](https://github.com/braindefender/klayde). Структура такая же, как у Windows и macOS: `Standard|Ortho` → `Normal|Inverted`. Внутри — по одному файлу на раскладку: `ULSEN` — Standard/English/Normal, `ULORUI` — Ortho/Russian/Inverted и так далее. Файлы самодостаточные — сами подключают `pc+inet(evdev)` и `level3(ralt_switch)`.
+
+1. Для остальных систем: положить нужные файлы в `~/.config/xkb/symbols/` и переключиться командой:
+
+   ```sh
+   setxkbmap -I ~/.config/xkb ULSEN
+   ```
+
+   Для NixOS: указать файл в `symbolsFile`:
 
    ```nix
    { ... }: {
       services.xserver = {
-        layout = "universal";
+        layout = "ULSEN";
 
-        extraLayouts = {
-          universal = {
-            description = "Universal Layout";
-            languages = ["eng"];
-            symbolsFile = ./universal;
-          };
+        extraLayouts."ULSEN" = {
+          description = "Universal Layout Standard English";
+          languages = ["eng"];
+          symbolsFile = ./ULSEN;
         };
       };
    }
    ```
 
-2. Для остальных: поместить содержимое папки `layouts/Linux/xkb` в `~/.config/xkb`.
-3. Далее, способ установки зависит от окружения рабочего стола (Desktop Environment):
+2. Способ подключения в окружении рабочего стола (Desktop Environment):
+
+> [!NOTE]
+> Правила (`rules/evdev`) для появления раскладок в системных настройках не поставляются. Для KDE/GNOME их можно дописать самостоятельно (см. [ArchWiki](https://wiki.archlinux.org/title/X_keyboard_extension)) — тогда раскладки появятся в списке выбора.
 
 #### KDE
 
 > [!IMPORTANT]
-> В KDE нельзя использовать Merged варианты раскладок, они не поддерживаются реализацией XKB в Plasma!
-
-Самый простой способ — это добавить в системе две раскладки: `universal-layout-english` и `universal-layout-russian`, а затем удалить стандартную раскладку.
-
-Таким образом, получим поведение, где язык будет переключаться по CapsLock и даже будет отображаться выбранный язык (English EN или Russian RU) в трее.
-
-> Может понадобиться поменять местами English и Russian в списке — это делается через стрелочку справа.
+> В KDE нельзя использовать Merged варианты раскладок, они не поддерживаются реализацией XKB в Plasma!
 
 #### GNOME
 
-В списке языков добавить Russian и English. В Gnome Tweaks в настройках клавиатуры включить опцию Universal Layout. Но это может работать криво: на Wayland может появляться ещё одна группа с дефолтной английской раскладкой.
+В Gnome Tweaks в настройках клавиатуры можно включить кастомную раскладку. Но это может работать криво: на Wayland может появляться ещё одна группа с дефолтной английской раскладкой.
 
-#### Другие WindowManager'ы
+#### Другие Window Manager'ы
 
-Общая рекомендация: ищите инструкцию по установке кастомной раскладке в документации своего оконного менеджера.
+**X11** (i3wm, dwm, herbstluftwm и другие): можно добавить `setxkbmap -I ~/.config/xkb <имя>` в автозапуск.
 
-**X Window System** (i3wm, dwm, herbstluftwm и другие): можно добавить в автозапуск следующие команды:
-
-```sh
-xkbcomp $HOME/.config/xkb/symbols/ul_combo $DISPLAY 2>&1
-```
-
-**Wayland** (sway, hyprland, niri и другие): Обычно можно указать прямой путь на `symbols` или `xkb` файлы.
+**Wayland** (sway, hyprland, niri и другие): обычно можно указать прямой путь на symbols-файл в конфиге композитора — смотрите документацию вашего WM.
 
 ### macOS
 
@@ -233,9 +229,11 @@ xkbcomp $HOME/.config/xkb/symbols/ul_combo $DISPLAY 2>&1
 
 ### Linux
 
-Для изменения или создания раскладок под Linux я не находил GUI-приложений. Файлы раскладок никак не компилируются, поэтому для их редактирования вам понадобится [любой](https://www.vim.org) [текстовый](https://www.gnu.org/software/emacs/) [редактор](https://helix-editor.com).
+Раскладки генерируются из тех же TOML-схем программой [klayde](https://github.com/braindefender/klayde): `bun run linux`, готовые symbols-файлы попадают в этот репозиторий (`layouts/Linux`).
 
-О том, как пользоваться XKB можно почитать на [ArchWiki](https://wiki.archlinux.org/title/X_keyboard_extension). Формат XKB довольно старый и имеет свои особенности.
+Если всё же захочется править руками: файлы раскладок никак не компилируются, поэтому для их редактирования вам понадобится [любой](https://www.vim.org) [текстовый](https://www.gnu.org/software/emacs/) [редактор](https://helix-editor.com).
+
+О том, как пользоваться XKB можно почитать на [ArchWiki](https://wiki.archlinux.org/title/X_keyboard_extension). Формат XKB довольно старый и имеет свои особенности.
 
 ### macOS
 
