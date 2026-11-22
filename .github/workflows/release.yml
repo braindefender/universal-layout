@@ -20,16 +20,21 @@ jobs:
           archive="macos-universal-layout-${GITHUB_REF_NAME}.zip"
           mkdir -p dist
           while IFS= read -r -d '' bundle; do
-            dir=$(dirname "$bundle")
-            name=$(basename "$bundle")
-            (cd "$dir" && zip -qr "$GITHUB_WORKSPACE/dist/$archive" "$name")
+            bundle="${bundle#./}"
+            (cd layouts/macOS && zip -qr "$GITHUB_WORKSPACE/dist/$archive" "$bundle")
           done < <(find layouts/macOS -type d -name '*.bundle' -print0)
           echo "ARCHIVE=dist/$archive" >> "$GITHUB_ENV"
+
+      - name: Pack Windows layouts
+        run: |
+          archive="windows-universal-layout-${GITHUB_REF_NAME}.zip"
+          (cd layouts/Windows && zip -qr "$GITHUB_WORKSPACE/dist/$archive" Standard Ortho)
+          echo "WIN_ARCHIVE=dist/$archive" >> "$GITHUB_ENV"
 
       - name: Create GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "$GITHUB_REF_NAME" "$ARCHIVE" \
+          gh release create "$GITHUB_REF_NAME" "$ARCHIVE" "$WIN_ARCHIVE" \
             --title "Universal Layout $GITHUB_REF_NAME" \
-            --generate-notes
+            --notes-file release-notes.md
