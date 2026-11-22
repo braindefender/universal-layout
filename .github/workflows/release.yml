@@ -1,0 +1,46 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Pack macOS layout bundles
+        run: |
+          archive="macos-universal-layout-${GITHUB_REF_NAME}.zip"
+          mkdir -p dist
+          (cd layouts/macOS && while IFS= read -r -d '' bundle; do
+            bundle="${bundle#./}"
+            zip -qr "$GITHUB_WORKSPACE/dist/$archive" "$bundle"
+          done < <(find . -type d -name '*.bundle' -print0))
+          echo "ARCHIVE=dist/$archive" >> "$GITHUB_ENV"
+
+      - name: Pack Windows layouts
+        run: |
+          archive="windows-universal-layout-${GITHUB_REF_NAME}.zip"
+          (cd layouts/Windows && zip -qr "$GITHUB_WORKSPACE/dist/$archive" Standard Ortho)
+          echo "WIN_ARCHIVE=dist/$archive" >> "$GITHUB_ENV"
+
+      - name: Pack Linux layouts
+        run: |
+          archive="linux-universal-layout-${GITHUB_REF_NAME}.zip"
+          (cd layouts/Linux && zip -qr "$GITHUB_WORKSPACE/dist/$archive" Standard Ortho)
+          echo "LINUX_ARCHIVE=dist/$archive" >> "$GITHUB_ENV"
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" "$ARCHIVE" "$WIN_ARCHIVE" "$LINUX_ARCHIVE" \
+            --title "Universal Layout $GITHUB_REF_NAME" \
+            --notes-file release-notes.md
