@@ -38,7 +38,7 @@ xkb_symbols "ULOENI" {
     key <AB03> { type[Group1]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ c, C, copyright, cent ] };
     key <AB04> { type[Group1]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ v, V, U221A ] };
     key <AB05> { type[Group1]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ b, B, Greek_beta, Greek_BETA ] };
-    key <AB06> { type[Group1]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ n, N, Greek_eta, Greek_ETA ] };
+    key <AB06> { type[Group1]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ n, N, U20B8, numerosign ] };
     key <AB07> { type[Group1]="FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ m, M, Cyrillic_hardsign, Cyrillic_HARDSIGN ] };
     key <AB08> { type[Group1]="FOUR_LEVEL", symbols[Group1] = [ ampersand, ampersand, ampersand, ellipsis ] };
     key <AB09> { type[Group1]="FOUR_LEVEL", symbols[Group1] = [ bracketleft, braceleft, bracketleft, braceleft ] };

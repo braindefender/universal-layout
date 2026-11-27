@@ -509,7 +509,7 @@
             <key code="42" output="\"/>
             <key code="43" output="&#x003C;"/>
             <key code="44" output="&#x0026;"/>
-            <key code="45" output="η"/>
+            <key code="45" output="₸"/>
             <key code="46" output="ъ"/>
             <key code="47" output="&#x003E;"/>
             <key code="48" output="&#x0009;"/>
@@ -615,7 +615,7 @@
             <key code="42" output="¦"/>
             <key code="43" output="≤"/>
             <key code="44" output="…"/>
-            <key code="45" output="Η"/>
+            <key code="45" output="№"/>
             <key code="46" output="Ъ"/>
             <key code="47" output="≥"/>
             <key code="48" output="&#x0009;"/>
